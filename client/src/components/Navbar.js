@@ -3,7 +3,7 @@ import iconImg from "../images/icon.png";
 export default function Navbar({ currentPage, handlePageChange }) {
   return (
     <div>
-      <header className="display-flex justify-space-between align-center">
+      <header className="display-flex justify-space-between align-center p-2">
         <span>
           <nav className="navbar navbar-expand-lg">
             <a className="navbar-brand">

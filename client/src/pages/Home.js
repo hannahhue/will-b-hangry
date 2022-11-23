@@ -5,12 +5,13 @@ import { useQuery } from "@apollo/client";
 export default function Home() {
   return (
     <main>
-      {/* title / sign */}
-      <div className="title">
-        <div className="neon">Will B</div>
-        <div className="flux">Hangry</div>
+      <div className="sign">
+        {/* title / sign */}
+        <div className="title">
+          <div className="neon">Will B</div>
+          <div className="flux">Hangry</div>
+        </div>
       </div>
-
       {/* view product cards */}
       <div class="card">
         <div class="imgBox">

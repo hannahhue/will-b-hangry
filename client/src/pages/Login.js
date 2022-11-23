@@ -3,7 +3,7 @@ import { useQuery } from "@apollo/client";
 
 export default function Login() {
   return (
-    <main>
+    <main className="log">
       <div class="main">
         <input type="checkbox" id="chk" aria-hidden="true" />
 
