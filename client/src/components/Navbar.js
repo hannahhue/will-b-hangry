@@ -1,12 +1,14 @@
 import React from "react";
-
+import iconImg from "../images/icon.png";
 export default function Navbar({ currentPage, handlePageChange }) {
   return (
     <div>
-      <header className="display-flex justify-space-between align-center p-2">
+      <header className="display-flex justify-space-between align-center">
         <span>
           <nav className="navbar navbar-expand-lg">
-            <a className="navbar-brand">Hannah Hughes</a>
+            <a className="navbar-brand">
+              <img className="logo" src={iconImg} />
+            </a>
             <button
               className="navbar-toggler"
               type="button"
@@ -22,6 +24,28 @@ export default function Navbar({ currentPage, handlePageChange }) {
               <ul className="navbar-nav mr-auto">
                 <li className="nav-item">
                   <a
+                    href="#login"
+                    onClick={() => handlePageChange("Login")}
+                    className={
+                      currentPage === "Login" ? "nav-link active" : "nav-link"
+                    }
+                  >
+                    Login
+                  </a>
+                </li>
+                <li className="nav-item">
+                  <a
+                    href="#logout"
+                    onClick={() => handlePageChange("Logout")}
+                    className={
+                      currentPage === "Logout" ? "nav-link active" : "nav-link"
+                    }
+                  >
+                    Logout
+                  </a>
+                </li>
+                <li className="nav-item">
+                  <a
                     href="#home"
                     onClick={() => handlePageChange("Home")}
                     className={
@@ -33,48 +57,13 @@ export default function Navbar({ currentPage, handlePageChange }) {
                 </li>
                 <li className="nav-item">
                   <a
-                    href="#about"
-                    onClick={() => handlePageChange("About")}
+                    href="#cart"
+                    onClick={() => handlePageChange("Cart")}
                     className={
-                      currentPage === "About" ? "nav-link active" : "nav-link"
+                      currentPage === "Cart" ? "nav-link active" : "nav-link"
                     }
                   >
-                    About
-                  </a>
-                </li>
-                <li className="nav-item">
-                  <a
-                    href="#portfolio"
-                    onClick={() => handlePageChange("Portfolio")}
-                    className={
-                      currentPage === "Portfolio"
-                        ? "nav-link active"
-                        : "nav-link"
-                    }
-                  >
-                    Portfolio
-                  </a>
-                </li>
-                <li className="nav-item">
-                  <a
-                    href="#contact"
-                    onClick={() => handlePageChange("Contact")}
-                    className={
-                      currentPage === "Contact" ? "nav-link active" : "nav-link"
-                    }
-                  >
-                    Contact
-                  </a>
-                </li>
-                <li className="nav-item">
-                  <a
-                    href="#resume"
-                    onClick={() => handlePageChange("Resume")}
-                    className={
-                      currentPage === "Resume" ? "nav-link active" : "nav-link"
-                    }
-                  >
-                    Resume
+                    🛒
                   </a>
                 </li>
               </ul>
