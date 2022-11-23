@@ -9,7 +9,7 @@ body {
 }
 
 body {
-  margin: 0;
+  margin: 0 !important;
   padding: 0;
   font-family: 'Karla', sans-serif;
   font-weight: 400;
@@ -68,4 +68,6 @@ a {
 a:hover {
   text-decoration: underline;
 }
+
+
 
