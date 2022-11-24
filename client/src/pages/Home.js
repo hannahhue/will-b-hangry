@@ -1,6 +1,6 @@
-import React from "react";
-import burgImg from "../images/burg.png";
-import { useQuery } from "@apollo/client";
+import React from 'react';
+import burgImg from '../images/burg.png';
+import { useQuery } from '@apollo/client';
 
 export default function Home() {
   return (
@@ -13,58 +13,58 @@ export default function Home() {
         </div>
       </div>
       {/* view product cards */}
-      <div class="card">
-        <div class="imgBox">
-          <img class="food" src={burgImg} alt="burg" />
+      <div className="card">
+        <div className="imgBox">
+          <img className="food" src={burgImg} alt="burg" />
         </div>
 
-        <div class="contentBox">
+        <div className="contentBox">
           <h3>bargar</h3>
-          <h2 class="price">
+          <h2 className="price">
             $6.<small>98</small>
           </h2>
-          <a href="#" class="buy">
+          <a href="#" className="buy">
             Add To Cart
           </a>
-          <a href="#" class="buy">
+          <a href="#" className="buy">
             Toppings
           </a>
         </div>
       </div>
 
-      <div class="card">
-        <div class="imgBox">
-          <img class="food" src={burgImg} alt="burg" />
+      <div className="card">
+        <div className="imgBox">
+          <img className="food" src={burgImg} alt="burg" />
         </div>
 
-        <div class="contentBox">
+        <div className="contentBox">
           <h3>bargar</h3>
-          <h2 class="price">
+          <h2 className="price">
             $6.<small>98</small>
           </h2>
-          <a href="#" class="buy">
+          <a href="#" className="buy">
             Add To Cart
           </a>
-          <a href="#" class="buy">
+          <a href="#" className="buy">
             Toppings
           </a>
         </div>
       </div>
 
-      <div class="card">
-        <div class="imgBox">
-          <img class="food" src={burgImg} alt="burg" />
+      <div className="card">
+        <div className="imgBox">
+          <img className="food" src={burgImg} alt="burg" />
         </div>
 
-        <div class="contentBox">
+        <div className="contentBox">
           <h3>bargar</h3>
-          <h2 class="price">
+          <h2 className="price">
             $6.<small>98</small>
           </h2>
-          <a href="#" class="buy">
+          <a href="#" className="buy">
             Add To Cart
           </a>
-          <a href="#" class="buy">
+          <a href="#" className="buy">
             Toppings
           </a>
         </div>

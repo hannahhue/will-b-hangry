@@ -5,12 +5,11 @@ const Fry = require('./Fry');
 const Drink = require('./Drink');
 const Topping = require('./Topping');
 
-
-module.exports = { 
-    User, 
-    Order,
-    Burger,
-    Fry,
-    Drink,
-    Topping,
+module.exports = {
+  User,
+  Order,
+  Burger,
+  Fry,
+  Drink,
+  Topping,
 };
