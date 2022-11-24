@@ -16,7 +16,6 @@ const typeDefs = gql`
   }
 
   type Fry {
-    _id: ID!
     name: String!
     image: String
     poutine: Boolean
@@ -64,6 +63,7 @@ const typeDefs = gql`
     fry: [Fry]
     topping(_id: ID!): Topping
     toppings: [Topping]
+    orders: [Order]
   }
 
   type Mutation {

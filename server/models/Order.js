@@ -20,7 +20,7 @@ const orderSchema = new Schema({
   drinks: [
     {
       type: Schema.Types.ObjectId,
-      ref: 'Burger',
+      ref: 'Drink',
     },
   ],
   toppings: [
