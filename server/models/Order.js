@@ -1,32 +1,33 @@
 const { Schema, model } = require('mongoose');
+const Fry = require('./Fry');
 
 const orderSchema = new Schema({
   purchaseDate: {
     type: Date,
-    default: Date.now
+    default: Date.now,
   },
-  price: {
+  amount: {
     type: Number,
     required: true,
-    min: 20.00
   },
-  Burger: [
+  burgers: [
     {
       type: Schema.Types.ObjectId,
-      ref: 'Burger'
-    }
+      ref: 'Burger',
+    },
   ],
-  Fry: [
+  fries: [Fry.schema],
+  drinks: [
     {
       type: Schema.Types.ObjectId,
-      ref: 'Fry'
-    }
+      ref: 'Drink',
+    },
   ],
-  Drink: [
+  toppings: [
     {
       type: Schema.Types.ObjectId,
-      ref: 'Burger'
-    }
+      ref: 'Topping',
+    },
   ],
 });
 
