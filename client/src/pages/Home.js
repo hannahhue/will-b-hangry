@@ -4,7 +4,7 @@ import { useQuery } from "@apollo/client";
 
 export default function Home() {
   return (
-    <main>
+    <main className="row">
       <div className="sign">
         {/* title / sign */}
         <div className="title">
@@ -13,6 +13,43 @@ export default function Home() {
         </div>
       </div>
       {/* view product cards */}
+      <div class="card">
+        <div class="imgBox">
+          <img class="food" src={burgImg} alt="burg" />
+        </div>
+
+        <div class="contentBox">
+          <h3>bargar</h3>
+          <h2 class="price">
+            $6.<small>98</small>
+          </h2>
+          <a href="#" class="buy">
+            Add To Cart
+          </a>
+          <a href="#" class="buy">
+            Toppings
+          </a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="imgBox">
+          <img class="food" src={burgImg} alt="burg" />
+        </div>
+
+        <div class="contentBox">
+          <h3>bargar</h3>
+          <h2 class="price">
+            $6.<small>98</small>
+          </h2>
+          <a href="#" class="buy">
+            Add To Cart
+          </a>
+          <a href="#" class="buy">
+            Toppings
+          </a>
+        </div>
+      </div>
       <div class="card">
         <div class="imgBox">
           <img class="food" src={burgImg} alt="burg" />

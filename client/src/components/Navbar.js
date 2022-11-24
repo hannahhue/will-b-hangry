@@ -2,10 +2,10 @@ import React from "react";
 import iconImg from "../images/icon.png";
 export default function Navbar({ currentPage, handlePageChange }) {
   return (
-    <div>
+    <div className="fixed-top">
       <header className="display-flex justify-space-between align-center p-2">
         <span>
-          <nav className="navbar navbar-expand-lg">
+          <nav className="navbar navbar-expand-lg navbar-dark">
             <a className="navbar-brand">
               <img className="logo" src={iconImg} />
             </a>

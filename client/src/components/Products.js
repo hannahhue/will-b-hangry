@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function Portfolio(props) {
+export default function Products(props) {
   return (
     <div class="card">
       <div class="imgBox">
