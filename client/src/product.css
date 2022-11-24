@@ -1,0 +1,70 @@
+.product-container {
+    height: calc(100vh - 100px);
+    display: flex;
+    margin: 0;
+    justify-content: space-between;
+}
+
+.left {
+    flex: 1;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.right {
+    flex: 1;
+    padding: 20px;
+    text-align: center;
+    display: block;
+}
+
+.title-topping {
+    margin-top: 100px;
+    font-size: 50px;
+    justify-content:center;
+    align-items: center;
+    color: whitesmoke;
+    border-bottom: 1px solid whitesmoke;
+}
+
+.product-row {
+    display: flex;
+    float: right;
+    justify-content: center;
+    flex-wrap: nowrap;
+    width: 70%;
+}
+
+.topping-item {
+    font-size: 10px;
+    position: relative;
+    top: 20px;
+    left: -150px;
+}
+
+.checkbox {
+    position: relative;
+    top: 30px;
+}
+
+.product-button {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.button-one {
+    width: 80px;
+    height: auto;
+    display: flex;
+    flex: 1;
+}
+
+.button-two {
+    width: 80px;
+    height: auto;
+    display: flex;
+    flex: 1;
+}

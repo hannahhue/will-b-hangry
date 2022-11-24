@@ -1,24 +1,120 @@
-import React from "react";
+import { React, useState } from "react";
+import burgImg from "../images/burg.png";
+import "../product.css";
+import { AwesomeButton } from "react-awesome-button";
+import 'react-awesome-button/dist/styles.css';
 
-export default function Products(props) {
+const Products = (props) => {
+  const [amount, setAmount] = useState(0);
+  const burger = {
+    id: 1,
+    img: burgImg,
+    name: "Will Burger",
+    price: [12.99, 15.99],
+    description: "Double Bacon Cheese Burger",
+  };
+
   return (
-    <div class="card">
-      <div class="imgBox">
-        <img class="food" src={burgImg} alt="burg" />
+    <div className="product-container">
+      <div className="left">
+        <div class="card">
+          <div class="imgBox">
+            <img class="food" src={burger.img} alt="burg" />
+          </div>
+          <div class="contentBox">
+            <h3>{burger.name}</h3>
+            <h2 class="price">{burger.price[amount]}</h2>
+            <h3>{burger.description}</h3>
+          </div>
+        </div>
       </div>
-
-      <div class="contentBox">
-        <h3>bargar</h3>
-        <h2 class="price">
-          $6.<small>98</small>
-        </h2>
-        <a href="#" class="buy">
-          Add To Cart
-        </a>
-        <a href="#" class="buy">
-          Toppings
-        </a>
+      <div className="right">
+        <h3 className="title-topping"> Choose your toppings</h3>
+        <div class="topping-item">
+          <div class="product-row">
+            <div className="topping-options" class="col-sm-4">
+              <input
+                type="checkbox"
+                id="onion"
+                name="onion"
+                className="checkbox"
+              />
+              <label htmlFor="onion">Onion</label>
+            </div>
+            <div className="topping-options" class="col-sm-4">
+              <input
+                type="checkbox"
+                id="lettuce"
+                name="lettuce"
+                className="checkbox"
+              />
+              <label htmlFor="lettuce">Lettuce</label>
+            </div>
+            <div className="topping-options" class="col-sm-4">
+              <input
+                type="checkbox"
+                id="tomato"
+                name="tomato"
+                className="checkbox"
+              />
+              <label htmlFor="tomato">Tomato</label>
+            </div>
+            <div className="topping-options" class="col-sm-4">
+              <input
+                type="checkbox"
+                id="pickles"
+                name="pickles"
+                className="checkbox"
+              />
+              <label htmlFor="pickles">Pickles</label>
+            </div>
+          </div>
+          <div class="product-row">
+            <div className="topping-options" class="col-sm-4">
+              <input
+                type="checkbox"
+                id="ketchup"
+                name="ketchup"
+                className="checkbox"
+              />
+              <label htmlFor="ketchup">Ketchup</label>
+            </div>
+            <div className="topping-options" class="col-sm-4">
+              <input
+                type="checkbox"
+                id="mustard"
+                name="mustard"
+                className="checkbox"
+              />
+              <label htmlFor="mustard">Mustard</label>
+            </div>
+            <div className="topping-options" class="col-sm-4">
+              <input
+                type="checkbox"
+                id="mayo"
+                name="mayo"
+                className="checkbox"
+              />
+              <label htmlFor="mayo">Mayo</label>
+            </div>
+            <div className="topping-options" class="col-sm-4">
+              <input
+                type="checkbox"
+                id="cheese"
+                name="cheese"
+                className="checkbox"
+              />
+              <label htmlFor="cheese">Cheese</label>
+            </div>
+          </div>
+          <div className="product-button">
+        <AwesomeButton className="button-one" type="primary">Make A Combo</AwesomeButton>
+        <AwesomeButton className="button-two" type="primary">Add To Cart</AwesomeButton>
+        </div>
+          </div>
+        </div>
       </div>
-    </div>
   );
-}
+};
+
+export default Products;

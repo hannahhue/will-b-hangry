@@ -14,6 +14,7 @@ import { Provider } from "react-redux";
 import store from "./utils/globalState";
 
 import Container from "./components/Container";
+import Products from "./components/Products";
 
 const httpLink = createHttpLink({
   uri: "/graphql",
