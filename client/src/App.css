@@ -6,7 +6,7 @@ body {
   width: 100%;
   height: 100%;
   display: table;
-  background-color: #555f68;
+  background-color: #000000;
 }
 
 @font-face {
@@ -15,6 +15,13 @@ body {
 }
 
 /* title/sign */
+.sign {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 200px;
+}
+
 .title {
   display: table-cell;
   text-align: center;
@@ -76,18 +83,27 @@ body {
 
 /* nav bar */
 .navbar {
-    background-color: #555f68;
-    color: #384a72;
+    background-color: #222222;
+    padding-left: 20px;
+    font-size: 20px;
+  }
+
+.icon {
+    max-width: 80px;
+    padding: 0;
+    margin: 0;
+    background-color: #0000;
     padding-left: 20px;
   }
 
-.logo {
-    max-width: 70px;
-}
-
 /* product cards */
-
 .card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  margin-top: 100px;
+  margin-bottom: 100px;
   position: relative;
   width: 320px;
   height: 480px;
@@ -176,6 +192,160 @@ body {
 }
 
 .food {
-  max-height: 300px;
+  max-height: 250px;
   width: auto;
+}
+
+/* login/signup */
+.log {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px;
+}
+
+.main{
+	width: 350px;
+	height: 500px;
+	background: red;
+	overflow: hidden;
+	background: #191919;
+	border-radius: 10px;
+	box-shadow: 5px 20px 50px #000;
+}
+
+#chk{
+	display: none;
+}
+
+.signup{
+	position: relative;
+	width:100%;
+	height: 100%;
+}
+
+label{
+	color: #fff;
+	font-size: 2.3em;
+	justify-content: center;
+	display: flex;
+	margin: 60px;
+	font-weight: bold;
+	cursor: pointer;
+	transition: .5s ease-in-out;
+}
+
+input{
+	width: 60%;
+	height: 20px;
+	background: #e0dede;
+	justify-content: center;
+	display: flex;
+	margin: 20px auto;
+	padding: 10px;
+	border: none;
+	outline: none;
+	border-radius: 5px;
+}
+
+button{
+	width: 60%;
+	height: 40px;
+	margin: 10px auto;
+	justify-content: center;
+	display: block;
+	color: #fff;
+	background: #000000;
+	font-size: 1em;
+	font-weight: bold;
+	margin-top: 20px;
+	outline: none;
+	border: none;
+	border-radius: 5px;
+	transition: .2s ease-in;
+	cursor: pointer;
+}
+button:hover{
+	background: #191919;
+}
+.login{
+	height: 460px;
+	background: #eee;
+	border-radius: 60% / 10%;
+	transform: translateY(-180px);
+	transition: .8s ease-in-out;
+}
+.login label{
+	color: #000000;
+	transform: scale(.6);
+}
+
+#chk:checked ~ .login{
+	transform: translateY(-500px);
+}
+#chk:checked ~ .login label{
+	transform: scale(1);	
+}
+#chk:checked ~ .signup label{
+	transform: scale(.6);
+}
+
+
+/* cart */
+.logo {
+  text-align: center;
+  width: 65%;
+  height: 250px;
+  margin: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+   user-select: none;
+}
+
+.logo b{
+  font: 400 19vh "Vibur";
+  color: #fee;
+  text-shadow: 0 -40px 100px, 0 0 2px, 0 0 1em #ff4444, 0 0 0.5em #ff4444, 0 0 0.1em #ff4444, 0 10px 3px #000;
+}
+.logo b span{
+  animation: blink linear infinite 2s;
+}
+.logo b span:nth-of-type(2){
+  animation: blink linear infinite 3s;
+}
+@keyframes blink {
+  78% {
+    color: inherit;
+    text-shadow: inherit;
+  }
+  79%{
+     color: #333;
+  }
+  80% {
+    
+    text-shadow: none;
+  }
+  81% {
+    color: inherit;
+    text-shadow: inherit;
+  }
+  82% {
+    color: #333;
+    text-shadow: none;
+  }
+  83% {
+    color: inherit;
+    text-shadow: inherit;
+  }
+  92% {
+    color: #333;
+    text-shadow: none;
+  }
+  92.5% {
+    color: inherit;
+    text-shadow: inherit;
+  }
 }
