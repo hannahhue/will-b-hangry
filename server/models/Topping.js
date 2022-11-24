@@ -4,15 +4,14 @@ const toppingSchema = new Schema({
   name: {
     type: String,
     required: true,
-    trim: true
+    trim: true,
   },
   image: {
-    type: String
+    type: String,
   },
   price: {
     type: Number,
     required: true,
-    min: 0.99
   },
 });
 
