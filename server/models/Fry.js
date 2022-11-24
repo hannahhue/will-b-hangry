@@ -14,11 +14,11 @@ const frySchema = new Schema({
     required: true,
     min: 0.99
   },
-  Poutine: {
+  poutine: {
     type: Boolean,
     default: false,
   },
-  Cheese: {
+  cheese: {
     type: Boolean,
     default: false,
   },
