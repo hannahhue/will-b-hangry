@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import Navbar from "./Navbar";
 import Home from "../pages/Home";
 import Login from "../pages/Login";
-
+import Cart from "../pages/Cart";
+import Topping from "../pages/Topping";
 
 export default function PortfolioContainer() {
   const [currentPage, setCurrentPage] = useState("Home");
@@ -13,6 +14,12 @@ export default function PortfolioContainer() {
     }
     if (currentPage === "Login") {
       return <Login />;
+    }
+    if (currentPage === "Cart") {
+      return <Cart />;
+    }
+    if (currentPage === "Topping") {
+      return <Topping />;
     }
   };
 

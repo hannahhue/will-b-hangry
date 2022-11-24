@@ -7,7 +7,7 @@ export default function Navbar({ currentPage, handlePageChange }) {
         <span>
           <nav className="navbar navbar-expand-lg navbar-dark">
             <a className="navbar-brand">
-              <img className="logo" src={iconImg} />
+              <img className="icon" src={iconImg} />
             </a>
             <button
               className="navbar-toggler"
@@ -64,6 +64,17 @@ export default function Navbar({ currentPage, handlePageChange }) {
                     }
                   >
                     🛒
+                  </a>
+                </li>
+                <li className="nav-item">
+                  <a
+                    href="#top"
+                    onClick={() => handlePageChange("Topping")}
+                    className={
+                      currentPage === "Cart" ? "nav-link active" : "nav-link"
+                    }
+                  >
+                    top
                   </a>
                 </li>
               </ul>
