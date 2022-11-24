@@ -6,6 +6,10 @@ export default function Navbar({ currentPage, handlePageChange }) {
       <header className="display-flex justify-space-between align-center p-2">
         <span>
           <nav className="navbar navbar-expand-lg navbar-dark">
+    <div>
+      <header className="display-flex justify-space-between align-center">
+        <span>
+          <nav className="navbar navbar-expand-lg">
             <a className="navbar-brand">
               <img className="logo" src={iconImg} />
             </a>
