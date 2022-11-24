@@ -1,6 +1,6 @@
-import React from "react";
-import burgImg from "../images/burg.png";
-import { useQuery } from "@apollo/client";
+import React from 'react';
+import burgImg from '../images/burg.png';
+import { useQuery } from '@apollo/client';
 
 export default function Cart() {
   return (
@@ -13,7 +13,7 @@ export default function Cart() {
       </div>
 
       {/* recc cards */}
-      <div className="row">
+      <div className="row crt">
         <div class="card">
           <div class="imgBox">
             <img class="food" src={burgImg} alt="burg" />
@@ -52,6 +52,8 @@ export default function Cart() {
           </div>
         </div>
       </div>
+      {/* order sum */}
+      <div></div>
     </main>
   );
 }

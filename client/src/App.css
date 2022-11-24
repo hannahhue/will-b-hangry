@@ -292,30 +292,31 @@ button:hover{
 
 
 /* cart */
+.foodRec {
+  max-height: 70px;
+  width: auto;
+}
+
 .logo {
   text-align: center;
-  width: 65%;
-  height: 250px;
   margin: auto;
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-   user-select: none;
+  margin-top: 100px;
 }
 
 .logo b{
-  font: 400 19vh "Vibur";
+  font-size: 70px;
   color: #fee;
   text-shadow: 0 -40px 100px, 0 0 2px, 0 0 1em #ff4444, 0 0 0.5em #ff4444, 0 0 0.1em #ff4444, 0 10px 3px #000;
 }
+
 .logo b span{
   animation: blink linear infinite 2s;
 }
+
 .logo b span:nth-of-type(2){
   animation: blink linear infinite 3s;
 }
+
 @keyframes blink {
   78% {
     color: inherit;
