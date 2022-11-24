@@ -50,12 +50,6 @@ export default function Home() {
           </a>
         </div>
       </div>
-      
-      {/* title / sign */}
-      <div className="title">
-        <div className="neon">Will B</div>
-        <div className="flux">Hangry</div>
-      </div>
 
       {/* view product cards */}
       <div class="card">

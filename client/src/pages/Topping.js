@@ -3,5 +3,6 @@ import burgImg from "../images/burg.png";
 import { useQuery } from "@apollo/client";
 
 export default function Topping() {
-  return <main></main>;
+  return;
+  <main></main>;
 }
