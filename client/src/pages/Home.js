@@ -51,7 +51,6 @@ export default function Home() {
         </div>
       </div>
 
-      {/* view product cards */}
       <div class="card">
         <div class="imgBox">
           <img class="food" src={burgImg} alt="burg" />
