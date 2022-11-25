@@ -22,7 +22,11 @@ export default function Burgers({ currentPage, handlePageChange }) {
         burgers.map((burgers) => (
           <div className="card">
             <div className="imgBox">
-              <img className="food" src={burgers.image} alt="burg" />
+              <img
+                className="food"
+                src={`/images/${burgers.image}`}
+                alt="burg"
+              />
             </div>
 
             <div className="contentBox">
