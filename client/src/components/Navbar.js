@@ -25,10 +25,7 @@ function Nav({ currentPage, handlePageChange }) {
               >
                 <span className="navbar-toggler-icon"></span>
               </button>
-              <div
-                className="collapse navbar-collapse flex-md-row d-inline-flex"
-                id="navbarText"
-              >
+              <div className="collapse navbar-collapse" id="navbarText">
                 <ul className="navbar-nav mr-auto">
                   <li className="nav-item">
                     <a
@@ -41,25 +38,29 @@ function Nav({ currentPage, handlePageChange }) {
                       Home
                     </a>
                   </li>
-                  {auth.loggedIn() ? (
-                    <a
-                      href="/"
-                      onClick={() => Auth.logout()}
-                      className="nav-link"
-                    >
-                      Logout
-                    </a>
-                  ) : (
-                    <a
-                      href="#login"
-                      onClick={() => handlePageChange('Login')}
-                      className={
-                        currentPage === 'Login' ? 'nav-link active' : 'nav-link'
-                      }
-                    >
-                      Login
-                    </a>
-                  )}
+                  <li className="nav-item">
+                    {auth.loggedIn() ? (
+                      <a
+                        href="/"
+                        onClick={() => Auth.logout()}
+                        className="nav-link"
+                      >
+                        Logout
+                      </a>
+                    ) : (
+                      <a
+                        href="#login"
+                        onClick={() => handlePageChange('Login')}
+                        className={
+                          currentPage === 'Login'
+                            ? 'nav-link active'
+                            : 'nav-link'
+                        }
+                      >
+                        Login
+                      </a>
+                    )}
+                  </li>
                   <li className="nav-item">
                     <a
                       href="#products"

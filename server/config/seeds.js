@@ -19,25 +19,22 @@ db.once('open', async () => {
 
   const burger = await Burger.insertMany([
     {
-      name: 'Burger1',
-      description:
-        'Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.',
-      image: 'https://foodish-api.herokuapp.com/images/burger/burger87.jpg',
-      price: 9.99,
+      name: 'Will Burger',
+      description: 'Double pattys, bacon, and cheese',
+      image: 'double-bac.png',
+      price: 12.99,
     },
     {
-      name: 'Burger2',
-      description:
-        'Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.',
-      image: 'https://foodish-api.herokuapp.com/images/burger/burger79.jpg',
-      price: 9.99,
+      name: 'B Burger',
+      description: 'Mushroom Melt, swiss cheese, and fresh mushrooms',
+      image: 'mush-burg.png',
+      price: 14.99,
     },
     {
-      name: 'Burger3',
-      description:
-        'Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.',
-      image: 'https://foodish-api.herokuapp.com/images/burger/burger65.jpg',
-      price: 9.99,
+      name: 'Hangry Burger',
+      description: 'Breakfest Burger, fried eggs, ham, and cheese',
+      image: 'egg-burg.png',
+      price: 14.99,
     },
   ]);
 
