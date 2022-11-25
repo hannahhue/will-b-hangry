@@ -1,9 +1,9 @@
-import React from "react";
-import { useQuery } from "@apollo/client";
+import React from 'react';
+import { useQuery } from '@apollo/client';
 
 export default function Login() {
   return (
-    <main className="log">
+    <main>
       <div class="main">
         <input type="checkbox" id="chk" aria-hidden="true" />
 
@@ -12,6 +12,7 @@ export default function Login() {
             <label for="chk" aria-hidden="true">
               Sign up
             </label>
+            <input type="text" name="txt" placeholder="User name" required="" />
             <input type="email" name="email" placeholder="Email" required="" />
             <input
               type="password"
