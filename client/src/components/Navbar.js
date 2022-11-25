@@ -51,7 +51,7 @@ function Nav({ currentPage, handlePageChange }) {
                     </a>
                   ) : (
                     <a
-                      href="/login"
+                      href="#login"
                       onClick={() => handlePageChange('Login')}
                       className={
                         currentPage === 'Login' ? 'nav-link active' : 'nav-link'
