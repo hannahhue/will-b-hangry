@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
 import { useQuery } from '@apollo/client';
 import { QUERY_BURGERS } from '../utils/queries';
 
-export default function Burgers() {
+export default function Burgers({ currentPage, handlePageChange }) {
   const { loading, data } = useQuery(QUERY_BURGERS);
-  // let burgers;
 
   const [burgers, setBurger] = useState([]);
   useEffect(() => {
@@ -30,7 +30,11 @@ export default function Burgers() {
               <h2 className="price">
                 <small>{burgers.price}</small>
               </h2>
-              <a href="#" className="buy">
+              <a
+                className="buy"
+                href="#cart"
+                onClick={() => handlePageChange('Cart')}
+              >
                 Add To Cart
               </a>
               <a href="#" className="buy">
