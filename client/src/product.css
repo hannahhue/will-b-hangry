@@ -51,20 +51,37 @@
 
 .product-button {
     display: flex;
+    margin: auto;
+    text-align: center;
     flex-direction: row;
     justify-content: space-between;
+    width: 40rem;
 }
 
 .button-one {
-    width: 80px;
-    height: auto;
-    display: flex;
-    flex: 1;
+    display: inline-block;
+    top: 60px;
+    right: 20px;
 }
 
 .button-two {
-    width: 80px;
-    height: auto;
-    display: flex;
-    flex: 1;
+    display: inline-block;
+    top: 60px;
+    left: 20px;
+}
+
+.product-button .aws-btn {
+    --button-default-height: 50px;
+    --button-default-font-size: 25px;
+    --button-default-border-radius: 25px;
+    --button-horizontal-padding: 20%;
+    --button-raise-level: 10px;
+    --button-hover-pressure: 2;
+    --transform-speed: 0.4s;
+    --button-primary-color: #131313;
+    --button-primary-color-dark: transparent;
+    --button-primary-color-light:whitesmoke;
+    --button-primary-color-hover: #f1dd04;
+    --button-primary-color-active: #f1dd04;
+    --button-primary-border: 1px solid transparent;
 }

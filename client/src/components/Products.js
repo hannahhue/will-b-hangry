@@ -1,7 +1,7 @@
 import { React, useState } from "react";
 import burgImg from "../images/burg.png";
 import "../product.css";
-import { AwesomeButton } from "react-awesome-button";
+import { AwesomeButton } from 'react-awesome-button';
 import 'react-awesome-button/dist/styles.css';
 
 const Products = (props) => {
@@ -107,13 +107,13 @@ const Products = (props) => {
               <label htmlFor="cheese">Cheese</label>
             </div>
           </div>
-          <div className="product-button">
-        <AwesomeButton className="button-one" type="primary">Make A Combo</AwesomeButton>
-        <AwesomeButton className="button-two" type="primary">Add To Cart</AwesomeButton>
         </div>
+        <div className="product-button">
+        <AwesomeButton  type="primary" className="button-one">Make A Combo</AwesomeButton>
+        <AwesomeButton  type="primary" className="button-two">Add To Cart</AwesomeButton>
           </div>
-        </div>
       </div>
+    </div>
   );
 };
 
