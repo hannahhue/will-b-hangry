@@ -3,23 +3,29 @@ import burgImg from '../images/burg.png';
 import '../product.css';
 import { AwesomeButton } from 'react-awesome-button';
 import 'react-awesome-button/dist/styles.css';
+import { useDispatch, useSelector } from 'react-redux';
 
 const Products = (props) => {
+  const state = useSelector((state) => state.shop);
+
   const [amount, setAmount] = useState(0);
-  const burger = {
-    id: 1,
-    img: burgImg,
-    name: 'Will Burger',
-    price: [12.99, 15.99],
-    description: 'Double Bacon Cheese Burger',
-  };
+  // const burger = {
+  //   id: 1,
+  //   img: burgImg,
+  //   name: 'Will Burger',
+  //   price: [12.99, 15.99],
+  //   description: 'Double Bacon Cheese Burger',
+  // };
+
+  const burger = state.wishList[0];
+  console.log(burger);
 
   return (
     <div className="product-container">
       <div className="left">
         <div className="card">
           <div className="imgBox">
-            <img className="food" src={burger.img} alt="burg" />
+            <img className="food" src={`/images/${burger.image}`} alt="burg" />
           </div>
           <div className="contentBox">
             <h3>{burger.name}</h3>

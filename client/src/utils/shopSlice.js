@@ -12,6 +12,7 @@ export const shopSlice = createSlice({
       burgers: [],
     },
     cartOpen: false,
+    wishList: [],
   },
 
   // cart: {
@@ -32,7 +33,7 @@ export const shopSlice = createSlice({
       state.burgers = action.payload.burgers;
     },
     updateFry: (state, action) => {
-      state.fries = action.payload.fries;
+      state.fries = action.payload.fry;
     },
     updateDrink: (state, action) => {
       state.drinks = action.payload.drinks;
@@ -44,6 +45,10 @@ export const shopSlice = createSlice({
     //so action.payload = {burger:{name:'burger1', price:'xxx',...}}
     addToCart: (state, action) => {
       state.cart.burgers.push(action.payload);
+    },
+
+    addToWish: (state, action) => {
+      state.wishList.push(action.payload);
     },
 
     removeFromCart: (state, action) => {
@@ -68,6 +73,7 @@ export const {
   removeFromCart,
   clearCart,
   toggleCart,
+  addToWish,
 } = shopSlice.actions;
 
 export default shopSlice.reducer;

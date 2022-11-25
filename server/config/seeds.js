@@ -22,7 +22,7 @@ db.once('open', async () => {
       name: 'Burger1',
       description:
         'Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.',
-      image: '/images/burg.png',
+      image: 'burg.png',
       price: 9.99,
     },
     {
