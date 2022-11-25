@@ -41,25 +41,30 @@ function Nav({ currentPage, handlePageChange }) {
                       Home
                     </a>
                   </li>
-                  {auth.loggedIn() ? (
-                    <a
-                      href="/"
-                      onClick={() => Auth.logout()}
-                      className="nav-link"
-                    >
-                      Logout
-                    </a>
-                  ) : (
-                    <a
-                      href="#login"
-                      onClick={() => handlePageChange('Login')}
-                      className={
-                        currentPage === 'Login' ? 'nav-link active' : 'nav-link'
-                      }
-                    >
-                      Login
-                    </a>
-                  )}
+                  <li className="nav-item">
+                    {auth.loggedIn() ? (
+                      <a
+                        href="/"
+                        onClick={() => Auth.logout()}
+                        className="nav-link"
+                      >
+                        Logout
+                      </a>
+                    ) : (
+                      <a
+                        href="#login"
+                        onClick={() => handlePageChange('Login')}
+                        className={
+                          currentPage === 'Login'
+                            ? 'nav-link active'
+                            : 'nav-link'
+                        }
+                      >
+                        Login
+                      </a>
+                    )}
+                  </li>
+
                   <li className="nav-item">
                     <a
                       href="#products"

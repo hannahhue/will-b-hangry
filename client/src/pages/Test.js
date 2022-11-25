@@ -21,7 +21,7 @@ export default function Test() {
   console.log(state);
 
   //destruct from global state
-  const { cartOpen, burgers } = state;
+  const { cartOpen, burgers, toppings } = state;
   console.log(cartOpen);
 
   //get burger data from DB and rename as burgerData
@@ -43,22 +43,21 @@ export default function Test() {
   }, [dispatch, toppingData]);
 
   console.log(burgers);
+  console.log(state.cart);
 
   function handleClick() {
     dispatch(toggleCart());
   }
   let newItem;
   try {
-    newItem = [{ ...toppingData.toppings[3] }, { ...toppingData.toppings[4] }];
+    newItem = { ...burgers[0], toppings: [toppings[0], toppings[2]] };
     console.log(newItem);
   } catch (error) {}
 
   return (
     <div>
       <button onClick={handleClick}>change cartOpen</button>
-      <button onClick={() => dispatch(addToCart({ toppings: newItem }))}>
-        add item
-      </button>
+      <button onClick={() => dispatch(addToCart(newItem))}>add item</button>
     </div>
   );
 }
