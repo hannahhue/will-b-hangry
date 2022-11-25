@@ -46,6 +46,14 @@ const typeDefs = gql`
     amount: Float
   }
 
+  input FryData {
+    name: String
+    image: String
+    price: Float
+    poutine: Boolean
+    cheese: Boolean
+  }
+
   type Burger {
     _id: ID
     name: String!
@@ -75,6 +83,14 @@ const typeDefs = gql`
     ): Auth
 
     login(email: String!, password: String!): Auth
+
+    addOrder(
+      burgers: [ID]
+      fries: [FryData]
+      drinks: [ID]
+      toppings: [ID]
+      amount: Float
+    ): Order
   }
 `;
 
