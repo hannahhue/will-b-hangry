@@ -1,5 +1,5 @@
-import React from "react";
-import iconImg from "../images/icon.png";
+import React from 'react';
+import iconImg from '../images/icon.png';
 export default function Navbar({ currentPage, handlePageChange }) {
   return (
     <div className="fixed-top">
@@ -25,9 +25,9 @@ export default function Navbar({ currentPage, handlePageChange }) {
                 <li className="nav-item">
                   <a
                     href="#login"
-                    onClick={() => handlePageChange("Login")}
+                    onClick={() => handlePageChange('Login')}
                     className={
-                      currentPage === "Login" ? "nav-link active" : "nav-link"
+                      currentPage === 'Login' ? 'nav-link active' : 'nav-link'
                     }
                   >
                     Login
@@ -36,9 +36,9 @@ export default function Navbar({ currentPage, handlePageChange }) {
                 <li className="nav-item">
                   <a
                     href="#logout"
-                    onClick={() => handlePageChange("Logout")}
+                    onClick={() => handlePageChange('Logout')}
                     className={
-                      currentPage === "Logout" ? "nav-link active" : "nav-link"
+                      currentPage === 'Logout' ? 'nav-link active' : 'nav-link'
                     }
                   >
                     Logout
@@ -47,9 +47,9 @@ export default function Navbar({ currentPage, handlePageChange }) {
                 <li className="nav-item">
                   <a
                     href="#home"
-                    onClick={() => handlePageChange("Home")}
+                    onClick={() => handlePageChange('Home')}
                     className={
-                      currentPage === "Home" ? "nav-link active" : "nav-link"
+                      currentPage === 'Home' ? 'nav-link active' : 'nav-link'
                     }
                   >
                     Home
@@ -58,9 +58,9 @@ export default function Navbar({ currentPage, handlePageChange }) {
                 <li className="nav-item">
                   <a
                     href="#cart"
-                    onClick={() => handlePageChange("Cart")}
+                    onClick={() => handlePageChange('Cart')}
                     className={
-                      currentPage === "Cart" ? "nav-link active" : "nav-link"
+                      currentPage === 'Cart' ? 'nav-link active' : 'nav-link'
                     }
                   >
                     🛒
@@ -69,9 +69,9 @@ export default function Navbar({ currentPage, handlePageChange }) {
                 <li className="nav-item">
                   <a
                     href="#top"
-                    onClick={() => handlePageChange("Topping")}
+                    onClick={() => handlePageChange('Topping')}
                     className={
-                      currentPage === "Cart" ? "nav-link active" : "nav-link"
+                      currentPage === 'Cart' ? 'nav-link active' : 'nav-link'
                     }
                   >
                     top
