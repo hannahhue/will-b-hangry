@@ -1,5 +1,5 @@
 import React from 'react';
-import { useQuery } from '@apollo/client';
+
 import Burgers from '../components/Burgers';
 import { useDispatch, useSelector } from 'react-redux';
 

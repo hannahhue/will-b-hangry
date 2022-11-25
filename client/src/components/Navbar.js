@@ -25,10 +25,7 @@ function Nav({ currentPage, handlePageChange }) {
               >
                 <span className="navbar-toggler-icon"></span>
               </button>
-              <div
-                className="collapse navbar-collapse flex-md-row d-inline-flex"
-                id="navbarText"
-              >
+              <div className="collapse navbar-collapse" id="navbarText">
                 <ul className="navbar-nav mr-auto">
                   <li className="nav-item">
                     <a
@@ -64,7 +61,6 @@ function Nav({ currentPage, handlePageChange }) {
                       </a>
                     )}
                   </li>
-
                   <li className="nav-item">
                     <a
                       href="#products"
