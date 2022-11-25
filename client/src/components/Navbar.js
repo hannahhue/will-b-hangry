@@ -2,34 +2,9 @@ import React from 'react';
 import Auth from '../utils/auth';
 import { Link } from 'react-router-dom';
 import iconImg from '../images/icon.png';
+import auth from '../utils/auth';
 
 function Nav({ currentPage, handlePageChange }) {
-  function showNavigation() {
-    if (Auth.loggedIn()) {
-      return (
-        <ul className="flex-row">
-          <li className="mx-1">
-            {/* this is not using the Link component to logout or user and then refresh the application to the start */}
-            <a href="/" onClick={() => Auth.logout()}>
-              Logout
-            </a>
-          </li>
-        </ul>
-      );
-    } else {
-      return (
-        <ul className="flex-row">
-          <li className="mx-1">
-            <Link to="/signup">Signup</Link>
-          </li>
-          <li className="mx-1">
-            <Link to="/login">Login</Link>
-          </li>
-        </ul>
-      );
-    }
-  }
-
   return (
     <header className="flex-row px-1">
       <div className="fixed-top">
@@ -66,15 +41,25 @@ function Nav({ currentPage, handlePageChange }) {
                       Home
                     </a>
                   </li>
-                  <a
-                    href="/login"
-                    onClick={() => handlePageChange(showNavigation())}
-                    className={
-                      currentPage === 'Login' ? 'nav-link active' : 'nav-link'
-                    }
-                  >
-                    Login
-                  </a>
+                  {auth.loggedIn() ? (
+                    <a
+                      href="/"
+                      onClick={() => Auth.logout()}
+                      className="nav-link"
+                    >
+                      Logout
+                    </a>
+                  ) : (
+                    <a
+                      href="/login"
+                      onClick={() => handlePageChange('Login')}
+                      className={
+                        currentPage === 'Login' ? 'nav-link active' : 'nav-link'
+                      }
+                    >
+                      Login
+                    </a>
+                  )}
                   <li className="nav-item">
                     <a
                       href="#products"

@@ -8,60 +8,23 @@ export const shopSlice = createSlice({
     drinks: [],
     fries: [],
     burgers: [],
-    cart: [],
+    cart: {
+      burgers: [],
+    },
     cartOpen: false,
   },
-  // initialState: {
-  //   toppings: [
-  //     {
-  //       name: 'Bacon',
-  //       price: 0.99,
-  //     },
-  //     {
-  //       name: 'Tomatoes',
-  //       price: 0.99,
-  //     },
-  //     {
-  //       name: 'Cheese',
-  //       price: 0.99,
-  //     },
-  //     {
-  //       name: 'Pickle',
-  //       price: 0.99,
-  //     },
-  //   ],
-  //   drinks: [
-  //     {
-  //       name: 'Pepsi',
-  //       image:
-  //         'https://daanapaanisupermarket.ca/wp-content/uploads/2021/11/pepsi-soft-drink.jpg',
-  //       price: 1.99,
-  //     },
-  //     {
-  //       name: 'Fanta',
-  //       image:
-  //         'https://daanapaanisupermarket.ca/wp-content/uploads/2021/11/fanta-soft-drink-can-300ml.jpg',
-  //       price: 1.99,
-  //     },
-  //     {
-  //       name: 'Coca-cola',
-  //       image:
-  //         'https://daanapaanisupermarket.ca/wp-content/uploads/2021/11/coca-cola-soft-drink-can-300ml.jpg',
-  //       price: 1.99,
-  //     },
-  //   ],
-  //   fries: [
-  //     {
-  //       name: 'Fry',
-  //       image:
-  //         'https://littlesunnykitchen.com/wp-content/uploads/2020/09/French-Fry-Seasoning-7.jpg',
-  //       price: 1.99,
-  //     },
-  //   ],
-  //   burgers: [],
-  //   cart: [],
-  //   cartOpen: false,
-  // },
+
+  // cart: {
+  //     burgers: [
+  //       {
+  //         name: '',
+  //         description: '',
+  //         price: '',
+  //         topping: [],
+  //         fries: [],
+  //         drinks: [],
+  //       },
+  //     ],
 
   reducers: {
     updateBurger: (state, action) => {
@@ -77,10 +40,32 @@ export const shopSlice = createSlice({
       state.toppings = action.payload.toppings;
     },
 
-    //expect burger object ---  {name:'burger1', price:'xxx',...}
-    //so   action.payload = {name:'xxx', price:'xxx',...}
-    addBurgerToCart: (state, action) => {
-      state.cart.push(action.payload);
+    /*
+    cart:
+      {
+        burgers:[],
+        fries:[],
+        toppings:[],
+        drinks:[]
+      }
+    */
+    //expect object including array --- {burgers:[{name:'burger1', price:'xxx',...}]}
+    //so action.payload = {burgers:[{name:'burger1', price:'xxx',...}]}
+    addToCart: (state, action) => {
+      if (action.payload.burgers) {
+        state.cart.burgers = state.cart.burgers.concat(action.payload.burgers);
+      }
+      if (action.payload.fries) {
+        state.cart.fries = state.cart.fries.concat(action.payload.fries);
+      }
+      if (action.payload.drinks) {
+        state.cart.drinks = state.cart.drinks.concat(action.payload.drinks);
+      }
+      if (action.payload.toppings) {
+        state.cart.toppings = state.cart.toppings.concat(
+          action.payload.toppings
+        );
+      }
     },
 
     removeFromCart: (state, action) => {
@@ -101,7 +86,7 @@ export const {
   updateDrink,
   updateTopping,
   updateFry,
-  addBurgerToCart,
+  addToCart,
   removeFromCart,
   clearCart,
   toggleCart,
