@@ -1,10 +1,11 @@
 import React from 'react';
 import burgImg from '../images/burg.png';
 import { useQuery } from '@apollo/client';
+import Burgers from '../components/Burgers';
 
 export default function Home() {
   return (
-    <main className="row">
+    <main>
       <div className="sign">
         {/* title / sign */}
         <div className="title">
@@ -13,60 +14,21 @@ export default function Home() {
         </div>
       </div>
       {/* view product cards */}
-      <div className="card">
-        <div className="imgBox">
-          <img className="food" src={burgImg} alt="burg" />
-        </div>
-
-        <div className="contentBox">
-          <h3>bargar</h3>
-          <h2 className="price">
-            $6.<small>98</small>
-          </h2>
-          <a href="#" className="buy">
-            Add To Cart
-          </a>
-          <a href="#" className="buy">
-            Toppings
-          </a>
-        </div>
+      <div className="row">
+        <Burgers />
       </div>
 
-      <div className="card">
-        <div className="imgBox">
-          <img className="food" src={burgImg} alt="burg" />
-        </div>
-
-        <div className="contentBox">
-          <h3>bargar</h3>
-          <h2 className="price">
-            $6.<small>98</small>
-          </h2>
-          <a href="#" className="buy">
-            Add To Cart
-          </a>
-          <a href="#" className="buy">
-            Toppings
-          </a>
-        </div>
+      {/* about us */}
+      <div className="about">
+        <h1>About Us</h1>
       </div>
-
-      <div className="card">
-        <div className="imgBox">
-          <img className="food" src={burgImg} alt="burg" />
-        </div>
-
-        <div className="contentBox">
-          <h3>bargar</h3>
-          <h2 className="price">
-            $6.<small>98</small>
-          </h2>
-          <a href="#" className="buy">
-            Add To Cart
-          </a>
-          <a href="#" className="buy">
-            Toppings
-          </a>
+      <div class="about-card">
+        <div class="card-body">
+          <h3 class="card-title">Card title</h3>
+          <p class="card-text">
+            Some quick example text to build on the card title and make up the
+            bulk of the card's content.
+          </p>
         </div>
       </div>
     </main>
