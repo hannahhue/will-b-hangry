@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from 'react-redux';
 // to reducer function to modify global state
 import {
   toggleCart,
-  addBurgerToCart,
+  addToCart,
   updateBurger,
   updateTopping,
 } from '../utils/shopSlice';
@@ -47,10 +47,18 @@ export default function Test() {
   function handleClick() {
     dispatch(toggleCart());
   }
+  let newItem;
+  try {
+    newItem = [{ ...toppingData.toppings[3] }, { ...toppingData.toppings[4] }];
+    console.log(newItem);
+  } catch (error) {}
 
   return (
     <div>
       <button onClick={handleClick}>change cartOpen</button>
+      <button onClick={() => dispatch(addToCart({ toppings: newItem }))}>
+        add item
+      </button>
     </div>
   );
 }
