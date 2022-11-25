@@ -1,10 +1,10 @@
-import React, { useState } from "react";
-import Navbar from "./Navbar";
-import Home from "../pages/Home";
-import Products from "../components/Products";
-import Login from "../pages/Login";
-import Cart from "../pages/Cart";
-import Signup from "../pages/Signup";
+import React, { useState } from 'react';
+import Navbar from './Navbar';
+import Home from '../pages/Home';
+import Products from '../components/Products';
+import Login from '../pages/Login';
+import Cart from '../pages/Cart';
+import Signup from '../pages/Signup';
 
 export default function Container() {
   const [currentPage, setCurrentPage] = useState('Home');
@@ -22,9 +22,11 @@ export default function Container() {
       return <Signup />;
     }
     if (currentPage === 'Cart') {
-      return <Cart />;
+      return (
+        <Cart currentPage={currentPage} handlePageChange={handlePageChange} />
+      );
     }
-    if (currentPage === "Products") {
+    if (currentPage === 'Products') {
       return <Products />;
     }
   };

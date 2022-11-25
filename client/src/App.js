@@ -12,7 +12,7 @@ import './App.css';
 
 import { Provider } from 'react-redux';
 import store from './utils/globalState';
-
+import Test from './pages/Test';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
 import Container from './components/Container';

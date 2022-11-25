@@ -12,11 +12,13 @@ export const shopSlice = createSlice({
       burgers: [],
     },
     cartOpen: false,
+    wishList: [],
   },
 
   // cart: {
   //     burgers: [
   //       {
+  //         _id:
   //         name: '',
   //         description: '',
   //         price: '',
@@ -31,7 +33,7 @@ export const shopSlice = createSlice({
       state.burgers = action.payload.burgers;
     },
     updateFry: (state, action) => {
-      state.fries = action.payload.fries;
+      state.fries = action.payload.fry;
     },
     updateDrink: (state, action) => {
       state.drinks = action.payload.drinks;
@@ -39,33 +41,14 @@ export const shopSlice = createSlice({
     updateTopping: (state, action) => {
       state.toppings = action.payload.toppings;
     },
-
-    /*
-    cart:
-      {
-        burgers:[],
-        fries:[],
-        toppings:[],
-        drinks:[]
-      }
-    */
-    //expect object including array --- {burgers:[{name:'burger1', price:'xxx',...}]}
-    //so action.payload = {burgers:[{name:'burger1', price:'xxx',...}]}
+    //expect object including array --- {burger:{name:'burger1', price:'xxx',...}}
+    //so action.payload = {burger:{name:'burger1', price:'xxx',...}}
     addToCart: (state, action) => {
-      if (action.payload.burgers) {
-        state.cart.burgers = state.cart.burgers.concat(action.payload.burgers);
-      }
-      if (action.payload.fries) {
-        state.cart.fries = state.cart.fries.concat(action.payload.fries);
-      }
-      if (action.payload.drinks) {
-        state.cart.drinks = state.cart.drinks.concat(action.payload.drinks);
-      }
-      if (action.payload.toppings) {
-        state.cart.toppings = state.cart.toppings.concat(
-          action.payload.toppings
-        );
-      }
+      state.cart.burgers.push(action.payload);
+    },
+
+    addToWish: (state, action) => {
+      state.wishList.push(action.payload);
     },
 
     removeFromCart: (state, action) => {
@@ -90,6 +73,7 @@ export const {
   removeFromCart,
   clearCart,
   toggleCart,
+  addToWish,
 } = shopSlice.actions;
 
 export default shopSlice.reducer;

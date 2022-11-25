@@ -21,44 +21,42 @@ export default function Test() {
   console.log(state);
 
   //destruct from global state
-  const { cartOpen, burgers } = state;
+  const { cartOpen, burgers, toppings, cart } = state;
   console.log(cartOpen);
 
   //get burger data from DB and rename as burgerData
   const { data: burgerData } = useQuery(QUERY_BURGERS);
   const { data: toppingData } = useQuery(QUERY_TOPPINGS);
 
-  // use the useEffect hook to update the global state
-  //example 1:
+  // use the useEffect hook to update the global state of burger data
   useEffect(() => {
     if (burgerData) {
       dispatch(updateBurger(burgerData));
     }
   }, [dispatch, burgerData]);
-  // example 2:
+
+  // use the useEffect hook to update the global state of topping data
   useEffect(() => {
     if (toppingData) {
       dispatch(updateTopping(toppingData));
     }
   }, [dispatch, toppingData]);
 
+  //check the burgers data from global state
   console.log(burgers);
+  //check the cart data from global state
+  console.log(state.cart);
 
-  function handleClick() {
-    dispatch(toggleCart());
-  }
   let newItem;
   try {
-    newItem = [{ ...toppingData.toppings[3] }, { ...toppingData.toppings[4] }];
+    //testing data will be inserted to cart state
+    newItem = { ...burgers[0], toppings: [toppings[0], toppings[2]] };
     console.log(newItem);
   } catch (error) {}
 
   return (
     <div>
-      <button onClick={handleClick}>change cartOpen</button>
-      <button onClick={() => dispatch(addToCart({ toppings: newItem }))}>
-        add item
-      </button>
+      <button onClick={() => dispatch(addToCart(newItem))}>add item</button>
     </div>
   );
 }

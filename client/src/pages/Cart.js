@@ -1,8 +1,12 @@
 import React from 'react';
 
 import Burgers from '../components/Burgers';
+import { useDispatch, useSelector } from 'react-redux';
 
-export default function Cart() {
+export default function Cart({ currentPage, handlePageChange }) {
+  const state = useSelector((state) => state.shop);
+  const { cart } = state;
+  console.log(cart);
   return (
     <main>
       {/* sign text */}
@@ -14,7 +18,10 @@ export default function Cart() {
 
       {/* recc cards */}
       <div className="row crt">
-        <Burgers />
+        <Burgers
+          currentPage={currentPage}
+          handlePageChange={handlePageChange}
+        />
       </div>
 
       {/* order sum sign */}
