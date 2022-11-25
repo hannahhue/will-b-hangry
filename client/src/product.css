@@ -1,0 +1,87 @@
+.product-container {
+    height: calc(100vh - 100px);
+    display: flex;
+    margin: 0;
+    justify-content: space-between;
+}
+
+.left {
+    flex: 1;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.right {
+    flex: 1;
+    padding: 20px;
+    text-align: center;
+    display: block;
+}
+
+.title-topping {
+    margin-top: 100px;
+    font-size: 50px;
+    justify-content:center;
+    align-items: center;
+    color: whitesmoke;
+    border-bottom: 1px solid whitesmoke;
+}
+
+.product-row {
+    display: flex;
+    float: right;
+    justify-content: center;
+    flex-wrap: nowrap;
+    width: 70%;
+}
+
+.topping-item {
+    font-size: 10px;
+    position: relative;
+    top: 20px;
+    left: -150px;
+}
+
+.checkbox {
+    position: relative;
+    top: 30px;
+}
+
+.product-button {
+    display: flex;
+    margin: auto;
+    text-align: center;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 40rem;
+}
+
+.button-one {
+    display: inline-block;
+    top: 60px;
+    right: 20px;
+}
+
+.button-two {
+    display: inline-block;
+    top: 60px;
+    left: 20px;
+}
+
+.product-button .aws-btn {
+    --button-default-height: 50px;
+    --button-default-font-size: 25px;
+    --button-default-border-radius: 25px;
+    --button-horizontal-padding: 20%;
+    --button-raise-level: 10px;
+    --button-hover-pressure: 2;
+    --transform-speed: 0.4s;
+    --button-primary-color: #131313;
+    --button-primary-color-dark: transparent;
+    --button-primary-color-light:whitesmoke;
+    --button-primary-color-hover: #f1dd04;
+    --button-primary-color-active: #f1dd04;
+    --button-primary-border: 1px solid transparent;
+}

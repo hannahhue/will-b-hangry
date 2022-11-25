@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
-import Navbar from './Navbar';
-import Home from '../pages/Home';
-import Login from '../pages/Login';
-import Cart from '../pages/Cart';
-import Topping from '../pages/Topping';
+import React, { useState } from "react";
+import Navbar from "./Navbar";
+import Home from "../pages/Home";
+import Products from "../components/Products";
+import Login from "../pages/Login";
+import Cart from "../pages/Cart";
 
 export default function Container() {
   const [currentPage, setCurrentPage] = useState('Home');
@@ -20,8 +20,8 @@ export default function Container() {
     if (currentPage === 'Cart') {
       return <Cart />;
     }
-    if (currentPage === 'Topping') {
-      return <Topping />;
+    if (currentPage === "Products") {
+      return <Products />;
     }
   };
 
