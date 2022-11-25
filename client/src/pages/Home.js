@@ -3,7 +3,7 @@ import burgImg from '../images/burg.png';
 import { useQuery } from '@apollo/client';
 import Burgers from '../components/Burgers';
 
-export default function Home() {
+export default function Home({ currentPage, handlePageChange }) {
   return (
     <main>
       <div className="sign">
@@ -15,7 +15,10 @@ export default function Home() {
       </div>
       {/* view product cards */}
       <div className="row">
-        <Burgers />
+        <Burgers
+          currentPage={currentPage}
+          handlePageChange={handlePageChange}
+        />
       </div>
 
       {/* about us */}

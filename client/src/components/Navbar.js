@@ -68,13 +68,15 @@ export default function Navbar({ currentPage, handlePageChange }) {
                 </li>
                 <li className="nav-item">
                   <a
-                    href="#top"
-                    onClick={() => handlePageChange('Topping')}
+                    href="#products"
+                    onClick={() => handlePageChange('Products')}
                     className={
-                      currentPage === 'Cart' ? 'nav-link active' : 'nav-link'
+                      currentPage === 'Products'
+                        ? 'nav-link active'
+                        : 'nav-link'
                     }
                   >
-                    top
+                    Product
                   </a>
                 </li>
               </ul>
