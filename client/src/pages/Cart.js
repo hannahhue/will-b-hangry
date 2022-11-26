@@ -2,6 +2,7 @@ import React from 'react';
 
 import Burgers from '../components/Burgers';
 import { useDispatch, useSelector } from 'react-redux';
+import CartItem from '../components/CartItem';
 
 export default function Cart({ currentPage, handlePageChange }) {
   const state = useSelector((state) => state.shop);

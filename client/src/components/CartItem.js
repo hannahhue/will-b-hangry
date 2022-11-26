@@ -1,7 +1,7 @@
 import React from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
-import { idbPromise } from '../utils/helpers';
+// import { idbPromise } from '../utils/helpers';
 import { removeFromCart } from '../utils/shopSlice';
 
 export default function CartItem({ item }) {
@@ -14,7 +14,7 @@ export default function CartItem({ item }) {
         _id: item._id,
       })
     );
-    idbPromise('cart', 'delete', { ...item });
+    // idbPromise('cart', 'delete', { ...item });
   };
 
   // const onChange = (e) => {
@@ -31,7 +31,7 @@ export default function CartItem({ item }) {
 
   return (
     <>
-      {state.cart.combo.map(
+      {/* {state.cart.combo.map(
         (item) => (
           item.burgers ? (
             <tr key={item.burgers._id}>
@@ -39,9 +39,9 @@ export default function CartItem({ item }) {
                 <a onClick={() => handleRemoveFromCart(item)}>🗑️</a>
               </td>
               <td>{item.burgers.name}</td>
-              <td class="right">{item.burgers.price}</td>
+              <td className="right">{item.burgers.price}</td>
             </tr>
-          ) : null,
+          ) : null;
           item.fries ? (
             <tr key={item.fries._id}>
               <td>
@@ -61,7 +61,7 @@ export default function CartItem({ item }) {
             </tr>
           ) : null
         )
-      )}
+      )} */}
     </>
   );
 }
