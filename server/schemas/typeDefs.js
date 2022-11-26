@@ -16,10 +16,9 @@ const typeDefs = gql`
   }
 
   type Fry {
+    _id: ID
     name: String!
     image: String
-    poutine: Boolean
-    cheese: Boolean
     price: Float!
   }
 

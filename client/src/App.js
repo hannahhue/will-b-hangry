@@ -8,6 +8,7 @@ import {
 } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
 import 'bootstrap/dist/css/bootstrap.min.css';
+// import 'react-awesome-button/dist/styles.css';
 import './App.css';
 
 import { Provider } from 'react-redux';
