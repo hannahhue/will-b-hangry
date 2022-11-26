@@ -16,9 +16,27 @@ body {
 
 /* about us */
 .card-body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
   background-color: #191919;
-  width: 18rem;
-  border-radius: 4%;
+  color: white;
+  width: 40rem;
+  padding: 30px;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  border-radius: 10px;
+}
+
+.card-title {
+  font-size: large;
+}
+
+.card-text {
+  font-size: 15px;
+  margin-left: 20px;
+
 }
 
 .about {
@@ -440,19 +458,6 @@ button:hover{
   flex-direction: row;
 }
 
-.paid {
- display:none;
-  width:300px;
-  margin:0 auto;
-    background-color:#fff;
-  text-align:center;
-  padding-top:25px;
-  border-radius:0px 0px 10px 10px;
-  padding-bottom:25px; 
-  color:#00773D;
-  line-height:30px;
-}
-
 .paid p {
   background-image:url("http://dc455.4shared.com/download/VILITso0/tsid20130720-183900-9216b81f/check.png");
   background-repeat:no-repeat;
@@ -479,7 +484,7 @@ button:hover{
    background-color:#FAFAF9;
   padding-top:20px;
     width:300px;
-  height:300px;
+  height:550px;
   margin:-5px auto;
   border-radius:5px 5px 50px 50px;
   -moz-box-shadow: 0 10px 30px rgba(0,0,0,0.3);
@@ -494,8 +499,8 @@ box-shadow: 0 10px 30px rgba(0,0,0,0.3);
 }
 
 .title {
-  color:#00773D;
-  margin-top:20px;
+  color:#2B2929;
+  margin-top:5px;
   margin-left:10px;
   font-weight:bold;
   float:left;
@@ -510,8 +515,8 @@ table
   margin:0 auto;
   color:#5B5B5B;
   font-size:12px;
-  padding-top:10px;
-  padding-bottom:20px;
+  padding-top:5px;
+  padding-bottom:5px;
   border-bottom:1px dashed #ccc;
 }
 
@@ -523,7 +528,7 @@ table
 .center
 {
   text-align:center;
-  padding-top:20px;
+  padding-top:5px;
 }
 
 .barcode
@@ -547,73 +552,4 @@ text-align:center;
   margin-top:5px;
   color:#5B5B5B;
   width:100%;
-}
-
-/* payment */
-@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap');
-
-.pay {
-    max-width: 500px;
-    margin: auto;
-    color: black;
-    border-radius: 20 px;
-}
-
-p {
-    margin: 0px;
-    color: white;
-}
-
-.btn.btn-primary {
-    width: 100%;
-    height: 70px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 15px;
-    background-image: linear-gradient(to right, #77A1D3 0%, #79CBCA 51%, #77A1D3 100%);
-    border: none;
-    transition: 0.5s;
-    background-size: 200% auto;
-
-}
-
-
-.btn.btn.btn-primary:hover {
-    background-position: right center;
-    color: #fff;
-    text-decoration: none;
-}
-
-
-
-.btn.btn-primary:hover .fas.fa-arrow-right {
-    transform: translate(15px);
-    transition: transform 0.2s ease-in;
-}
-
-.form-control {
-    color: white;
-    background-color: #223C60;
-    border: 2px solid transparent;
-    height: 60px;
-    padding-left: 20px;
-    vertical-align: middle;
-}
-
-.form-control:focus {
-    color: white;
-    background-color: #0C4160;
-    border: 2px solid #2d4dda;
-    box-shadow: none;
-}
-
-.text {
-    font-size: 14px;
-    font-weight: 600;
-}
-
-::placeholder {
-    font-size: 14px;
-    font-weight: 600;
 }
