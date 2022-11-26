@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react';
-import burgImg from '../images/burg.png';
 import { useQuery } from '@apollo/client';
 import Burgers from '../components/Burgers';
 
