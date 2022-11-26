@@ -1,6 +1,4 @@
 import React from 'react';
-import CartItem from '../components/CartItem';
-
 import Burgers from '../components/Burgers';
 import { useDispatch, useSelector } from 'react-redux';
 import CartItem from '../components/CartItem';
@@ -42,7 +40,9 @@ export default function Cart({ currentPage, handlePageChange }) {
               <div className="title">Cart</div>
               <table>
                 <tbody>
-                  <CartItem />
+                  {state.cart.combo.map((item) => (
+                    <CartItem key={item.burgers[0]._id} item={item} />
+                  ))}
                 </tbody>
               </table>
               <div className="bar center">

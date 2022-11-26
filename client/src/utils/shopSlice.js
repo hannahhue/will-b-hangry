@@ -19,9 +19,9 @@ export const shopSlice = createSlice({
       combo: [
 
         // have a single burger
-        { burgers:[ name:'burger1',price:10,]
-          topping: [],
-          fries: [],
+        { burgers: [{id:.., name:'burger1',price:10,}]
+          topping: [{},{},{}],
+          fries: [{}],
           drinks: [],
         },
 

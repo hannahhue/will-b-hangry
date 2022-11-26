@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import {
   ApolloClient,
@@ -16,6 +16,8 @@ import Test from './pages/Test';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
 import Container from './components/Container';
+import Navbar from './components/Navbar';
+
 const httpLink = createHttpLink({
   uri: '/graphql',
 });
@@ -36,13 +38,28 @@ const client = new ApolloClient({
 });
 
 function App() {
+  const handlePageChange = (page) => setCurrentPage(page);
+  const [currentPage, setCurrentPage] = useState('Home');
+
   return (
     <ApolloProvider client={client}>
       <Router>
         <div>
           <Provider store={store}>
+            <Navbar
+              currentPage={currentPage}
+              handlePageChange={handlePageChange}
+            />
             <Routes>
-              <Route path="/" element={<Container />} />
+              <Route
+                path="/"
+                element={
+                  <Container
+                    currentPage={currentPage}
+                    handlePageChange={handlePageChange}
+                  />
+                }
+              />
             </Routes>
           </Provider>
         </div>
