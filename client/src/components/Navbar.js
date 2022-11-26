@@ -63,15 +63,15 @@ function Nav({ currentPage, handlePageChange }) {
                   </li>
                   <li className="nav-item">
                     <a
-                      href="#products"
-                      onClick={() => handlePageChange('Products')}
+                      href="#combo"
+                      onClick={() => handlePageChange('Combo')}
                       className={
-                        currentPage === 'Products'
+                        currentPage === 'Combo'
                           ? 'nav-link active'
                           : 'nav-link'
                       }
                     >
-                      Product
+                      Combo
                     </a>
                   </li>
                   <li className="nav-item">

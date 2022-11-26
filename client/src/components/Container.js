@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Navbar from './Navbar';
 import Home from '../pages/Home';
-import Products from '../components/Products';
+import Combo from '../pages/Combo';
 import Login from '../pages/Login';
 import Cart from '../pages/Cart';
 import Signup from '../pages/Signup';
@@ -26,8 +26,8 @@ export default function Container() {
         <Cart currentPage={currentPage} handlePageChange={handlePageChange} />
       );
     }
-    if (currentPage === 'Products') {
-      return <Products />;
+    if (currentPage === 'Combo') {
+      return <Combo />;
     }
   };
 

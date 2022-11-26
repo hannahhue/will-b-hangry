@@ -14,10 +14,9 @@ export const QUERY_BURGERS = gql`
 export const QUERY_FRY = gql`
   query Fry {
     fry {
+      _id
       name
       image
-      poutine
-      cheese
       price
     }
   }
