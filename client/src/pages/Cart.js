@@ -1,4 +1,5 @@
 import React from 'react';
+import CartItem from '../components/CartItem';
 
 import Burgers from '../components/Burgers';
 import { useDispatch, useSelector } from 'react-redux';
