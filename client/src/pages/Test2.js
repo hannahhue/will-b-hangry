@@ -1,12 +1,16 @@
 import React, { useState, useEffect } from 'react';
+import { useLazyQuery } from '@apollo/client';
 
 import { useQuery } from '@apollo/client';
 import { QUERY_BURGERS } from '../utils/queries';
+import Auth from '../utils/auth';
+import { QUERY_CHECKOUT } from '../utils/queries';
 
-export default function Burgers() {
+export default function TestCheckout() {
   const { data, loading } = useQuery(QUERY_BURGERS);
   // let burgers;
   const [burgers, setBurger] = useState([]);
+  const [getCheckout, { data }] = useLazyQuery(QUERY_CHECKOUT);
 
   useEffect(() => {
     if (data) {
@@ -14,33 +18,25 @@ export default function Burgers() {
     }
   }, [data]);
 
+  function submitCheckout() {
+    const productIds = [];
+
+    state.cart.forEach((item) => {
+      for (let i = 0; i < item.purchaseQuantity; i++) {
+        productIds.push(item._id);
+      }
+    });
+
+    getCheckout({
+      variables: { products: productIds },
+    });
+  }
+
   console.log(burgers);
   return (
     <>
-      {loading ? (
-        <div>loading</div>
-      ) : (
-        burgers.map((burgers) => (
-          <div className="card" key={burgers._id}>
-            <div className="imgBox">
-              <img className="food" src={burgers.image} alt="burg" />
-            </div>
-
-            <div className="contentBox">
-              <h3>{burgers.name}</h3>
-              <h2 className="price">
-                <small>{burgers.price}</small>
-              </h2>
-              <a href="#" className="buy">
-                Add To Cart
-              </a>
-              <a href="#" className="buy">
-                Toppings
-              </a>
-            </div>
-          </div>
-        ))
-      )}
+      <button>add to cart</button>
+      <button>checkout</button>
     </>
   );
 }

@@ -9,23 +9,41 @@ export const shopSlice = createSlice({
     fries: [],
     burgers: [],
     cart: {
-      burgers: [],
+      combo: [],
     },
     cartOpen: false,
     wishList: [],
   },
+  /*
+  cart: {
+      combo: [
+
+        // have a single burger
+        { burgers: [{id:.., name:'burger1',price:10,}]
+          topping: [{},{},{}],
+          fries: [{}],
+          drinks: [],
+        },
+
+        // has a bull combo set
+        { burgers:[ name:'burger1',price:10,]
+          topping: [name:xxx... ],
+          fries: [name:xxx...],
+          drinks: [name:xxx...],
+        },
+      ],
+    }
+  */
 
   // cart: {
-  //     burgers: [
+  //     combo:[
   //       {
-  //         _id:
-  //         name: '',
-  //         description: '',
-  //         price: '',
+  //         burgers: []
   //         topping: [],
   //         fries: [],
   //         drinks: [],
   //       },
+  //      ]
   //     ],
 
   reducers: {
@@ -44,7 +62,7 @@ export const shopSlice = createSlice({
     //expect object including array --- {burger:{name:'burger1', price:'xxx',...}}
     //so action.payload = {burger:{name:'burger1', price:'xxx',...}}
     addToCart: (state, action) => {
-      state.cart.burgers.push(action.payload);
+      state.cart.combo.push(action.payload);
     },
 
     addToWish: (state, action) => {

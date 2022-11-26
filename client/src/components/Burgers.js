@@ -27,28 +27,28 @@ export default function Burgers({ currentPage, handlePageChange }) {
 
   return (
     <>
-      {state.burgers.map((burgers) => (
-        <div className="card" key={burgers._id}>
+      {state.burgers.map((burger) => (
+        <div className="card" key={burger._id}>
           <div className="imgBox">
-            <img className="food" src={`/images/${burgers.image}`} alt="burg" />
+            <img className="food" src={`/images/${burger.image}`} alt="burg" />
           </div>
 
           <div className="contentBox">
-            <h3>{burgers.name}</h3>
+            <h3>{burger.name}</h3>
             <h2 className="price">
-              <small>{burgers.price}</small>
+              <small>{burger.price}</small>
             </h2>
             <a
               className="buy"
               href="#cart"
-              onClick={() => handleAddToCart(burgers)}
+              onClick={() => handleAddToCart({ burgers: [{ ...burger }] })}
             >
               Add To Cart
             </a>
             <a
               href="#topping"
               className="buy"
-              onClick={() => handleAddToppings(burgers)}
+              onClick={() => handleAddToppings(burger)}
             >
               Toppings
             </a>

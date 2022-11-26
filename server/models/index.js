@@ -4,6 +4,7 @@ const Burger = require('./Burger');
 const Fry = require('./Fry');
 const Drink = require('./Drink');
 const Topping = require('./Topping');
+const Combo = require('./Combo');
 
 module.exports = {
   User,
@@ -12,4 +13,5 @@ module.exports = {
   Fry,
   Drink,
   Topping,
+  Combo,
 };
