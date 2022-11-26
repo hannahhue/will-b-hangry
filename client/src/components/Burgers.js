@@ -1,9 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 
-import { useQuery } from '@apollo/client';
-import { QUERY_BURGERS } from '../utils/queries';
 import { addToCart, addToWish } from '../utils/shopSlice';
 export default function Burgers({ currentPage, handlePageChange }) {
   // const { loading, data } = useQuery(QUERY_BURGERS);
