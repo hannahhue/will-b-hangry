@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import burgImg from '../images/burg.png';
 import '../product.css';
 import { AwesomeButton } from 'react-awesome-button';
-import 'react-awesome-button/dist/styles.css';
+// import 'react-awesome-button/dist/styles.css';
 import { useDispatch, useSelector } from 'react-redux';
 
 const Products = (props) => {
@@ -19,6 +19,7 @@ const Products = (props) => {
 
   const burger = state.wishList[0];
   console.log(burger);
+  const toppings = state.toppings;
 
   return (
     <div className="product-container">
@@ -75,6 +76,7 @@ const Products = (props) => {
               <label htmlFor="pickles">Pickles</label>
             </div>
           </div>
+
           <div className="product-row">
             <div className="topping-options col-sm-4">
               <input

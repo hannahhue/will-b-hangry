@@ -11,6 +11,18 @@ db.once('open', async () => {
         'https://littlesunnykitchen.com/wp-content/uploads/2020/09/French-Fry-Seasoning-7.jpg',
       price: 1.99,
     },
+    {
+      name: 'Poutine',
+      image:
+        'https://littlesunnykitchen.com/wp-content/uploads/2020/09/French-Fry-Seasoning-7.jpg',
+      price: 7.99,
+    },
+    {
+      name: 'Cheese Fries',
+      image:
+        'https://littlesunnykitchen.com/wp-content/uploads/2020/09/French-Fry-Seasoning-7.jpg',
+      price: 5.99,
+    },
   ]);
 
   console.log('categories seeded');

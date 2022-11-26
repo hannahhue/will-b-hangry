@@ -5,32 +5,32 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useQuery } from '@apollo/client';
 import { QUERY_FRY } from '../utils/queries';
 import { addToCart, addToWish } from '../utils/shopSlice';
-export default function Burgers({ currentPage, handlePageChange }) {
-  const { loading, data } = useQuery(QUERY_FRY);
+export default function Fry({ currentPage, handlePageChange }) {
+  // const { loading, data } = useQuery(QUERY_FRY);
   const state = useSelector((state) => state.shop);
   const dispatch = useDispatch();
+  console.log(state);
+  // const [fry, setFry] = useState([]);
 
-  const [fry, setFry] = useState([]);
+  // useEffect(() => {
+  //   if (data) {
+  //     setFry(data.fry);
+  //   }
+  // }, [data]);
 
-  useEffect(() => {
-    if (data) {
-      setFry(data.fry);
-    }
-  }, [data]);
+  // const handleAddToCart = (fry) => {
+  //   dispatch(addToCart(fry));
+  //   handlePageChange('Cart');
+  // };
 
-  const handleAddToCart = (fry) => {
-    dispatch(addToCart(fry));
-    handlePageChange('Cart');
-  };
-
-  const handleAddToppings = (fry) => {
-    dispatch(addToWish(fry));
-    handlePageChange('Products');
-  };
+  // const handleAddToppings = (fry) => {
+  //   dispatch(addToWish(fry));
+  //   handlePageChange('Products');
+  // };
 
   return (
     <div>
-    {state.fry.map((fry) => (
+      {state.fries.map((fry) => (
         <div className="card" key={fry._id}>
           <div className="imgBox">
             <img className="food" src={`/images/${fry.image}`} alt="fry" />
@@ -52,5 +52,5 @@ export default function Burgers({ currentPage, handlePageChange }) {
         </div>
       ))}
     </div>
-  )
+  );
 }

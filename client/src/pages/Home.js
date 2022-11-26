@@ -31,7 +31,7 @@ export default function Home({ currentPage, handlePageChange }) {
   const { data: toppingData } = useQuery(QUERY_TOPPINGS);
   const { data: drinkData } = useQuery(QUERY_DRINKS);
   const { data: fryData } = useQuery(QUERY_FRY);
-
+  console.log(fryData);
   const dispatch = useDispatch();
   // use the useEffect hook to update the global state of burger data
   useEffect(() => {
