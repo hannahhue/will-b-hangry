@@ -1,5 +1,13 @@
 const db = require('./connection');
-const { User, Fry, Drink, Burger, Topping, Order } = require('../models');
+const {
+  User,
+  Fry,
+  Drink,
+  Burger,
+  Topping,
+  Order,
+  Combo,
+} = require('../models');
 
 db.once('open', async () => {
   await Fry.deleteMany();
@@ -25,7 +33,7 @@ db.once('open', async () => {
     },
   ]);
 
-  console.log('categories seeded');
+  console.log('fires seeded');
 
   await Burger.deleteMany();
 
@@ -92,32 +100,50 @@ db.once('open', async () => {
       price: 0.99,
     },
     {
-      name: 'Pickle',
+      name: 'Pickles',
       price: 0.99,
     },
     {
       name: 'Lettuce',
       price: 0.99,
     },
+    {
+      name: 'Ketchup',
+      price: 0.99,
+    },
+    {
+      name: 'Mustard',
+      price: 0.99,
+    },
+    {
+      name: 'Mayo',
+      price: 0.99,
+    },
   ]);
   console.log('Topping seeded');
 
-  await Order.deleteMany();
+  await Combo.deleteMany();
 
-  const newOrder = {
+  const newCombo = {
     burgers: [burger[0]._id],
-    fries: [{ ...fry[0], cheese: true }],
+    fries: [fry[0]._id],
     drinks: [drink[0]._id],
     toppings: [topping[0]._id, topping[1]._id, topping[2]._id],
-    amount: 22,
   };
 
-  const order = await Order.insertMany([
+  const combo = await Combo.insertMany([
     {
-      ...newOrder,
+      ...newCombo,
     },
   ]);
-  console.log(topping[0]);
+
+  console.log('combo seeded');
+
+  await Order.deleteMany();
+
+  const order = await Order.insertMany([
+    { combos: [combo[0]._id], amount: 22 },
+  ]);
   console.log('order seeded');
 
   await User.deleteMany();
