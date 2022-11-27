@@ -20,6 +20,7 @@ import {
 
 // function to access global state
 import { useDispatch, useSelector } from 'react-redux';
+import Test2 from './Test2';
 
 export default function Home({ currentPage, handlePageChange }) {
   //get global state

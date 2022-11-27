@@ -19,7 +19,7 @@ import Login from './pages/Login';
 import Cart from './pages/Cart';
 import Signup from './pages/Signup';
 import Topping from './components/Topping';
-import Test from './pages/Test';
+import Test from './pages/Test2';
 import Navbar from './components/Navbar';
 
 const httpLink = createHttpLink({

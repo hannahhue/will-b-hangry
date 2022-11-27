@@ -17,13 +17,7 @@ export default function Burgers({ currentPage, handlePageChange }) {
   // }, [data]);
 
   const handleAddToCart = (burger) => {
-    console.log('i am called');
     dispatch(addToCart(burger));
-  };
-
-  const handleAddToppings = (burger) => {
-    dispatch(addToWish(burger));
-    handlePageChange('Products');
   };
 
   return (

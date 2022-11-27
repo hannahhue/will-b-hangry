@@ -1,8 +1,29 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import '../styles/Drink.css';
+import { Link } from 'react-router-dom';
+import { addToCart } from '../utils/shopSlice';
 
-export default function Drink({ drinks }) {
+export default function Drink({
+  burger,
+  drinks,
+  selectedFry,
+  selectedToppings,
+}) {
+  const state = useSelector((state) => state.shop);
+  const dispatch = useDispatch();
+
+  const handleAddToCart = (drink) => {
+    const newItem = {
+      burgers: [burger],
+      toppings: [selectedToppings],
+      drinks: [drink],
+      fries: [...selectedFry],
+    };
+
+    dispatch(addToCart(newItem));
+  };
+
   return (
     <div className="drink-main">
       {drinks.map((drink) => (
@@ -21,9 +42,13 @@ export default function Drink({ drinks }) {
               <h2 className="price">
                 <small>{drink.price}</small>
               </h2>
-              <a className="buy" href="#cart" onClick={() => {}}>
+              <Link
+                to={'/cart'}
+                className="buy"
+                onClick={() => handleAddToCart(drink)}
+              >
                 Add To Cart
-              </a>
+              </Link>
             </div>
           </div>
         </div>
