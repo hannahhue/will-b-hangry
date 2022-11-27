@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import iconImg from '../images/icon.png';
 import auth from '../utils/auth';
 
-function Nav({ currentPage, handlePageChange }) {
+function Nav() {
   return (
     <header className="flex-row px-1">
       <div className="fixed-top">
@@ -28,15 +28,7 @@ function Nav({ currentPage, handlePageChange }) {
               <div className="collapse navbar-collapse" id="navbarText">
                 <ul className="navbar-nav mr-auto">
                   <li className="nav-item">
-                    <a
-                      href="#home"
-                      onClick={() => handlePageChange('Home')}
-                      className={
-                        currentPage === 'Home' ? 'nav-link active' : 'nav-link'
-                      }
-                    >
-                      Home
-                    </a>
+                    <Link to="/">Home</Link>
                   </li>
                   <li className="nav-item">
                     {auth.loggedIn() ? (
@@ -48,42 +40,14 @@ function Nav({ currentPage, handlePageChange }) {
                         Logout
                       </a>
                     ) : (
-                      <a
-                        href="#login"
-                        onClick={() => handlePageChange('Login')}
-                        className={
-                          currentPage === 'Login'
-                            ? 'nav-link active'
-                            : 'nav-link'
-                        }
-                      >
-                        Login
-                      </a>
+                      <Link to="/login">Login</Link>
                     )}
                   </li>
                   <li className="nav-item">
-                    <a
-                      href="#combo"
-                      onClick={() => handlePageChange('Combo')}
-                      className={
-                        currentPage === 'Combo'
-                          ? 'nav-link active'
-                          : 'nav-link'
-                      }
-                    >
-                      Combo
-                    </a>
+                    <Link to="combo">Combo</Link>
                   </li>
                   <li className="nav-item">
-                    <a
-                      href="#cart"
-                      onClick={() => handlePageChange('Cart')}
-                      className={
-                        currentPage === 'Cart' ? 'nav-link active' : 'nav-link'
-                      }
-                    >
-                      Cart 🛒
-                    </a>
+                    <Link to="/cart">🛒</Link>
                   </li>
                 </ul>
               </div>

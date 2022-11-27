@@ -9,13 +9,16 @@ import {
 import { setContext } from '@apollo/client/link/context';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
-
 import { Provider } from 'react-redux';
 import store from './utils/globalState';
-import Test from './pages/Test';
+
+import Home from './pages/Home';
+import Combo from './pages/Combo';
 import Login from './pages/Login';
+import Cart from './pages/Cart';
 import Signup from './pages/Signup';
-import Container from './components/Container';
+import Topping from './components/Topping';
+import Test from './pages/Test';
 import Navbar from './components/Navbar';
 
 const httpLink = createHttpLink({
@@ -46,21 +49,14 @@ function App() {
       <Router>
         <div>
           <Provider store={store}>
-            <Navbar
-              currentPage={currentPage}
-              handlePageChange={handlePageChange}
-            />
+            <Navbar />
             <Routes>
-              <Route
-                path="/"
-                element={
-                  <Container
-                    currentPage={currentPage}
-                    handlePageChange={handlePageChange}
-                  />
-                }
-              />
+              <Route path="/" element={<Home />} />
+              <Route path="/login" element={<Login />} />
               <Route path="/signup" element={<Signup />} />
+              <Route path="/topping" element={<Topping />} />
+              <Route path="/combo" element={<Combo />} />
+              <Route path="/cart" element={<Cart />} />
             </Routes>
           </Provider>
         </div>
