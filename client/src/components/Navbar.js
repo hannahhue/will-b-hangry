@@ -3,8 +3,11 @@ import Auth from '../utils/auth';
 import { Link } from 'react-router-dom';
 import iconImg from '../images/icon.png';
 import auth from '../utils/auth';
+import { useDispatch, useSelector } from 'react-redux';
 
 function Nav() {
+  const state = useSelector((state) => state.shop);
+  const { cart } = state;
   return (
     <header className="flex-row px-1">
       <div className="fixed-top">
@@ -28,7 +31,9 @@ function Nav() {
               <div className="collapse navbar-collapse" id="navbarText">
                 <ul className="navbar-nav mr-auto">
                   <li className="nav-item">
-                    <Link to="/">Home</Link>
+                    <Link to="/" className="link">
+                      Home
+                    </Link>
                   </li>
                   <li className="nav-item">
                     {auth.loggedIn() ? (
@@ -40,14 +45,21 @@ function Nav() {
                         Logout
                       </a>
                     ) : (
-                      <Link to="/login">Login</Link>
+                      <Link to="/login" className="link">
+                        Login
+                      </Link>
                     )}
                   </li>
                   <li className="nav-item">
-                    <Link to="combo">Combo</Link>
+                    <Link to="combo" className="link">
+                      Combo
+                    </Link>
                   </li>
                   <li className="nav-item">
-                    <Link to="/cart">🛒</Link>
+                    <Link to="/cart" className="link-c">
+                      🛒
+                      <span class="badge badge-light">{cart.combo.length}</span>
+                    </Link>
                   </li>
                 </ul>
               </div>

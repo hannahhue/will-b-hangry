@@ -14,6 +14,28 @@ body {
   src: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/707108/neon.ttf);
 }
 
+/* navbar */
+.link {
+  color: white;
+  text-decoration: none;
+  padding-left: 10px;
+}
+
+.link:hover {
+  color: #000;
+  text-decoration: none;
+}
+
+.link-c {
+  color: white;
+  text-decoration: none;
+  padding-left: 10px;
+}
+
+.link-c:hover {
+  color: #000;
+}
+
 /* about us */
 .card-body {
   display: flex;
@@ -303,6 +325,12 @@ h1:focus {
     justify-content: center;
     align-items: center;
     margin-top: 100px;
+}
+
+.error-text {
+  color: red;
+  font-size: 15px;
+  font: bold;
 }
 
 @import url(https://fonts.googleapis.com/css?family=Roboto:300);

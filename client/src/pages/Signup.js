@@ -63,7 +63,7 @@ function Signup(props) {
               id="pwd"
               onChange={handleChange}
             />
-            <button type="submit">login</button>
+            <button type="submit">sign up</button>
             <p className="message">
               Have an account? <Link to="/login">Login</Link>
             </p>
