@@ -27,26 +27,17 @@ export default function Home({ currentPage, handlePageChange }) {
   const { cartOpen, burgers, toppings, cart, drinks, fries } = state;
   //get data from db
   const { data: burgerData } = useQuery(QUERY_BURGERS);
-  const { data: toppingData } = useQuery(QUERY_TOPPINGS);
-  const { data: drinkData } = useQuery(QUERY_DRINKS);
-  const { data: fryData } = useQuery(QUERY_FRY);
-  console.log(fryData);
+  // const { data: toppingData } = useQuery(QUERY_TOPPINGS);
+  // const { data: drinkData } = useQuery(QUERY_DRINKS);
+  // const { data: fryData } = useQuery(QUERY_FRY);
+
   const dispatch = useDispatch();
   // use the useEffect hook to update the global state of burger data
   useEffect(() => {
     if (burgerData) {
       dispatch(updateBurger(burgerData));
     }
-    if (toppingData) {
-      dispatch(updateTopping(toppingData));
-    }
-    if (drinkData) {
-      dispatch(updateDrink(drinkData));
-    }
-    if (fryData) {
-      dispatch(updateFry(fryData));
-    }
-  }, [dispatch, burgerData, toppingData, drinkData, fryData]);
+  }, [dispatch, burgerData]);
   console.log(state);
 
   return (

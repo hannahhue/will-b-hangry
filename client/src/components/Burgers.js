@@ -17,6 +17,7 @@ export default function Burgers({ currentPage, handlePageChange }) {
   // }, [data]);
 
   const handleAddToCart = (burger) => {
+    console.log('i am called');
     dispatch(addToCart(burger));
   };
 
@@ -45,13 +46,9 @@ export default function Burgers({ currentPage, handlePageChange }) {
             >
               Add To Cart
             </Link>
-            <a
-              href="#topping"
-              className="buy"
-              onClick={() => handleAddToppings(burger)}
-            >
+            <Link to={`/topping/${burger._id}`} className="buy">
               Toppings
-            </a>
+            </Link>
           </div>
         </div>
       ))}

@@ -9,6 +9,7 @@ import {
 import { setContext } from '@apollo/client/link/context';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
+// import './product.css';
 import { Provider } from 'react-redux';
 import store from './utils/globalState';
 
@@ -54,7 +55,7 @@ function App() {
               <Route path="/" element={<Home />} />
               <Route path="/login" element={<Login />} />
               <Route path="/signup" element={<Signup />} />
-              <Route path="/topping" element={<Topping />} />
+              <Route path="/topping/:burgerId" element={<Topping />} />
               <Route path="/combo" element={<Combo />} />
               <Route path="/cart" element={<Cart />} />
             </Routes>
