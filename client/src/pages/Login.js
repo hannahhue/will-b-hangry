@@ -1,11 +1,11 @@
-import React, { useState } from "react";
-import { useMutation } from "@apollo/client";
-import { Link } from "react-router-dom";
-import { LOGIN } from "../utils/mutations";
-import Auth from "../utils/auth";
+import React, { useState } from 'react';
+import { useMutation } from '@apollo/client';
+import { Link } from 'react-router-dom';
+import { LOGIN } from '../utils/mutations';
+import Auth from '../utils/auth';
 
 function Login(props) {
-  const [formState, setFormState] = useState({ email: "", password: "" });
+  const [formState, setFormState] = useState({ email: '', password: '' });
   const [login, { error }] = useMutation(LOGIN);
 
   const handleFormSubmit = async (event) => {
@@ -30,38 +30,24 @@ function Login(props) {
   };
 
   return (
-    <main>
-      <div className="main">
-        <input type="checkbox" id="chk" aria-hidden="true" />
-        <div className="container my-1">
-          <Link to="/signup">← Go to Signup</Link>
-
-          <h2>Login</h2>
-          <form onSubmit={handleFormSubmit}>
-            <div className="flex-row space-between my-2">
-              <label htmlFor="email" for="chk" aria-hidden="true">
-                Email address:
-              </label>
-              <input
-                placeholder="youremail@test.com"
-                name="email"
-                type="email"
-                id="email"
-                onChange={handleChange}
-              />
-            </div>
-            <div className="flex-row space-between my-2">
-              <label htmlFor="pwd" for="chk" aria-hidden="true">
-                Password:
-              </label>
-              <input
-                placeholder="******"
-                name="password"
-                type="password"
-                id="pwd"
-                onChange={handleChange}
-              />
-            </div>
+    <main className="log">
+      <div className="login-page">
+        <div className="form" onSubmit={handleFormSubmit}>
+          <form className="login-form">
+            <input
+              placeholder="email"
+              name="email"
+              type="email"
+              id="email"
+              onChange={handleChange}
+            />
+            <input
+              placeholder="password"
+              name="password"
+              type="password"
+              id="pwd"
+              onChange={handleChange}
+            />
             {error ? (
               <div>
                 <p className="error-text">
@@ -69,9 +55,10 @@ function Login(props) {
                 </p>
               </div>
             ) : null}
-            <div className="flex-row flex-end">
-              <button type="submit">Submit</button>
-            </div>
+            <button type="submit">login</button>
+            <p className="message">
+              Not registered? <Link to="/signup">Signup</Link>
+            </p>
           </form>
         </div>
       </div>

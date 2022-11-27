@@ -42,7 +42,7 @@ db.once('open', async () => {
       name: 'Will Burger',
       description: 'Double pattys, bacon, and cheese',
       image: 'double-bac.png',
-      price: 12.99,
+      price: 14.99,
     },
     {
       name: 'B Burger',

@@ -3,8 +3,11 @@ import Auth from '../utils/auth';
 import { Link } from 'react-router-dom';
 import iconImg from '../images/icon.png';
 import auth from '../utils/auth';
+import { useDispatch, useSelector } from 'react-redux';
 
-function Nav({ currentPage, handlePageChange }) {
+function Nav() {
+  const state = useSelector((state) => state.shop);
+  const { cart } = state;
   return (
     <header className="flex-row px-1">
       <div className="fixed-top">
@@ -28,15 +31,9 @@ function Nav({ currentPage, handlePageChange }) {
               <div className="collapse navbar-collapse" id="navbarText">
                 <ul className="navbar-nav mr-auto">
                   <li className="nav-item">
-                    <a
-                      href="#home"
-                      onClick={() => handlePageChange('Home')}
-                      className={
-                        currentPage === 'Home' ? 'nav-link active' : 'nav-link'
-                      }
-                    >
+                    <Link to="/" className="link">
                       Home
-                    </a>
+                    </Link>
                   </li>
                   <li className="nav-item">
                     {auth.loggedIn() ? (
@@ -48,42 +45,21 @@ function Nav({ currentPage, handlePageChange }) {
                         Logout
                       </a>
                     ) : (
-                      <a
-                        href="#login"
-                        onClick={() => handlePageChange('Login')}
-                        className={
-                          currentPage === 'Login'
-                            ? 'nav-link active'
-                            : 'nav-link'
-                        }
-                      >
+                      <Link to="/login" className="link">
                         Login
-                      </a>
+                      </Link>
                     )}
                   </li>
                   <li className="nav-item">
-                    <a
-                      href="#combo"
-                      onClick={() => handlePageChange('Combo')}
-                      className={
-                        currentPage === 'Combo'
-                          ? 'nav-link active'
-                          : 'nav-link'
-                      }
-                    >
+                    <Link to="combo" className="link">
                       Combo
-                    </a>
+                    </Link>
                   </li>
                   <li className="nav-item">
-                    <a
-                      href="#cart"
-                      onClick={() => handlePageChange('Cart')}
-                      className={
-                        currentPage === 'Cart' ? 'nav-link active' : 'nav-link'
-                      }
-                    >
-                      Cart 🛒
-                    </a>
+                    <Link to="/cart" className="link-c">
+                      🛒
+                      <span class="badge badge-light">{cart.combo.length}</span>
+                    </Link>
                   </li>
                 </ul>
               </div>
