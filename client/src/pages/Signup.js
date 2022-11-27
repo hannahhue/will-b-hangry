@@ -1,11 +1,11 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
-import { useMutation } from "@apollo/client";
-import Auth from "../utils/auth";
-import { ADD_USER } from "../utils/mutations";
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+import { useMutation } from '@apollo/client';
+import Auth from '../utils/auth';
+import { ADD_USER } from '../utils/mutations';
 
 function Signup(props) {
-  const [formState, setFormState] = useState({ email: "", password: "" });
+  const [formState, setFormState] = useState({ email: '', password: '' });
   const [addUser] = useMutation(ADD_USER);
 
   const handleFormSubmit = async (event) => {
@@ -31,65 +31,42 @@ function Signup(props) {
   };
 
   return (
-    <main>
-      <div className="main">
-        <input type="checkbox" id="chk" aria-hidden="true" />
-        <div className="container my-1">
-          <Link to="/login">← Go to Login</Link>
-
-          <h2>Signup</h2>
-          <form onSubmit={handleFormSubmit}>
-            <div className="flex-row space-between my-2">
-              <label htmlFor="firstName" for="chk" aria-hidden="true">
-                First Name:
-              </label>
-              <input
-                placeholder="First"
-                name="firstName"
-                type="firstName"
-                id="firstName"
-                onChange={handleChange}
-              />
-            </div>
-            <div className="flex-row space-between my-2">
-              <label htmlFor="lastName" for="chk" aria-hidden="true">
-                Last Name:
-              </label>
-              <input
-                placeholder="Last"
-                name="lastName"
-                type="lastName"
-                id="lastName"
-                onChange={handleChange}
-              />
-            </div>
-            <div className="flex-row space-between my-2">
-              <label htmlFor="email" for="chk" aria-hidden="true">
-                Email:
-              </label>
-              <input
-                placeholder="youremail@test.com"
-                name="email"
-                type="email"
-                id="email"
-                onChange={handleChange}
-              />
-            </div>
-            <div className="flex-row space-between my-2">
-              <label htmlFor="pwd" for="chk" aria-hidden="true">
-                Password:
-              </label>
-              <input
-                placeholder="******"
-                name="password"
-                type="password"
-                id="pwd"
-                onChange={handleChange}
-              />
-            </div>
-            <div className="flex-row flex-end">
-              <button type="submit">Submit</button>
-            </div>
+    <main className="log">
+      <div className="login-page">
+        <div className="form" onSubmit={handleFormSubmit}>
+          <form className="login-form">
+            <input
+              placeholder="first name"
+              name="firstName"
+              type="firstName"
+              id="firstName"
+              onChange={handleChange}
+            />
+            <input
+              placeholder="last name"
+              name="lastName"
+              type="lastName"
+              id="lastName"
+              onChange={handleChange}
+            />
+            <input
+              placeholder="email"
+              name="email"
+              type="email"
+              id="email"
+              onChange={handleChange}
+            />
+            <input
+              placeholder="password"
+              name="password"
+              type="password"
+              id="pwd"
+              onChange={handleChange}
+            />
+            <button type="submit">sign up</button>
+            <p className="message">
+              Have an account? <Link to="/login">Login</Link>
+            </p>
           </form>
         </div>
       </div>

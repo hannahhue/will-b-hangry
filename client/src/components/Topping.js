@@ -16,7 +16,7 @@ import {
   updateFry,
 } from '../utils/shopSlice';
 
-const Products = (props) => {
+const Topping = (props) => {
   const { data: burgerData, loading } = useQuery(QUERY_BURGERS);
   const { data: toppingData } = useQuery(QUERY_TOPPINGS);
 
@@ -157,4 +157,4 @@ const Products = (props) => {
   );
 };
 
-export default Products;
+export default Topping;

@@ -61,12 +61,16 @@ export default function Home({ currentPage, handlePageChange }) {
       <div className="about">
         <h1>About Us</h1>
       </div>
+
       <div className="about-card">
         <div className="card-body">
-          <h3 className="card-title">Card title</h3>
+          <h3 className="card-title">Since 1990</h3>
           <p className="card-text">
-            Some quick example text to build on the card title and make up the
-            bulk of the card's content.
+            Wills opened on Thanksgiving Day 1990. Chef / Owner Will Silver
+            began frying burgers and selling them to restaurants and his
+            neighbors out of a small kitchen. Today, the beloved restaurant and
+            burger shop celebrates 27 years of classic, made from scratch
+            cooking.
           </p>
         </div>
       </div>
