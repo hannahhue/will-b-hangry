@@ -1,8 +1,5 @@
 const { Schema, model } = require('mongoose');
 
-// normal fries
-// cheese fries
-// poutine
 const frySchema = new Schema({
   name: {
     type: String,
