@@ -15,7 +15,7 @@ import {
   updateFry,
 } from '../utils/shopSlice';
 
-export default function Combo({ burger }) {
+export default function Combo({ burger, selectedToppings }) {
   const { data: drinksData, loading } = useQuery(QUERY_DRINKS);
   const { data: friesData } = useQuery(QUERY_FRY);
 
@@ -57,7 +57,12 @@ export default function Combo({ burger }) {
         />
       </div>
       <div className="row">
-        <Drink drinks={drinks} />
+        <Drink
+          drinks={drinks}
+          selectedFry={selectedFry}
+          burger={burger}
+          selectedToppings={selectedToppings}
+        />
       </div>
       <div className="combo-button">
         <AwesomeButton type="primary" className="button-one-combo">

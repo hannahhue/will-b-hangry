@@ -1,4 +1,3 @@
-import { current } from '@reduxjs/toolkit';
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import '../styles/Fry.css';
@@ -8,8 +7,8 @@ export default function Fry({ fries, selectedFry, setSelectedFry }) {
     if (e.target.checked) {
       setSelectedFry([...selectedFry, choice]);
     } else {
-      const newSelect = selectedFry.filter((fry) => fry._id === choice._id);
-      setSelectedFry([newSelect]);
+      const newSelect = selectedFry.filter((fry) => fry._id !== choice._id);
+      setSelectedFry([...newSelect]);
     }
     setCheckbox((current) => !current);
   }
