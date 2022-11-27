@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import '../product.css';
 import { AwesomeButton } from 'react-awesome-button';
-import 'react-awesome-button/dist/styles.css';
+// import 'react-awesome-button/dist/styles.css';
 import { useDispatch, useSelector } from 'react-redux';
 
 const Topping = (props) => {
