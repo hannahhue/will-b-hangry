@@ -1,17 +1,26 @@
-import React from "react";
-import { useDispatch, useSelector } from "react-redux";
-import "../styles/Fry.css";
+import { current } from '@reduxjs/toolkit';
+import React, { useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import '../styles/Fry.css';
 
-export default function Fry({ currentPage, handlePageChange }) {
-  const state = useSelector((state) => state.shop);
-  const dispatch = useDispatch();
-  console.log(state);
+export default function Fry({ fries, selectedFry, setSelectedFry }) {
+  function handleCheckbox(choice, e) {
+    if (e.target.checked) {
+      setSelectedFry([...selectedFry, choice]);
+    } else {
+      const newSelect = selectedFry.filter((fry) => fry._id === choice._id);
+      setSelectedFry([newSelect]);
+    }
+    setCheckbox((current) => !current);
+  }
+  console.log(selectedFry);
 
+  const [checkBoxStatus, setCheckbox] = useState(false);
   return (
     <div className="fry-main">
-      {state.fries.map((fry) => (
-        <div className="card-container1">
-          <div className="card" key={fry._id}>
+      {fries.map((fry) => (
+        <div className="card-container1" key={fry._id}>
+          <div className="card">
             <div className="imgBox">
               <img className="food" src={`/images/${fry.image}`} alt="fry" />
             </div>
@@ -21,13 +30,13 @@ export default function Fry({ currentPage, handlePageChange }) {
               <h2 className="price">
                 <small>{fry.price}</small>
               </h2>
-              <a
+              <input
+                id={`${fry._id}`}
+                type="checkbox"
                 className="buy"
-                href="#cart"
-                onClick={() => handlePageChange("Cart")}
-              >
-                Select
-              </a>
+                value={checkBoxStatus}
+                onChange={(e) => handleCheckbox(fry, e)}
+              />
             </div>
           </div>
         </div>

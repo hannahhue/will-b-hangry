@@ -16,8 +16,8 @@ export default function Burgers({ currentPage, handlePageChange }) {
   // }, [data]);
 
   const handleAddToCart = (burger) => {
+    console.log('i am called');
     dispatch(addToCart(burger));
-    handlePageChange('Cart');
   };
 
   const handleAddToppings = (burger) => {
@@ -38,18 +38,14 @@ export default function Burgers({ currentPage, handlePageChange }) {
             <h2 className="price">
               <small>{burger.price}</small>
             </h2>
-            <a
+            <Link
+              to={'/cart'}
               className="buy"
-              href="#cart"
               onClick={() => handleAddToCart({ burgers: [{ ...burger }] })}
             >
               Add To Cart
-            </a>
-            <Link
-              to={`/topping/${burger._id}`}
-              className="buy"
-              // onClick={() => handleAddToppings(burger)}
-            >
+            </Link>
+            <Link to={`/topping/${burger._id}`} className="buy">
               Toppings
             </Link>
           </div>
