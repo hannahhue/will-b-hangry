@@ -1,6 +1,6 @@
-import React from "react";
-import { useDispatch, useSelector } from "react-redux";
-import "../styles/Drink.css";
+import React from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import '../styles/Drink.css';
 
 export default function Drink({ currentPage, handlePageChange }) {
   const state = useSelector((state) => state.shop);
@@ -15,7 +15,7 @@ export default function Drink({ currentPage, handlePageChange }) {
             <div className="imgBox">
               <img
                 className="food"
-                src={`/images/${drink}.image}`}
+                src={`/images/${drink.image}`}
                 alt="drink"
               />
             </div>
@@ -28,7 +28,7 @@ export default function Drink({ currentPage, handlePageChange }) {
               <a
                 className="buy"
                 href="#cart"
-                onClick={() => handlePageChange("Cart")}
+                onClick={() => handlePageChange('Cart')}
               >
                 Add To Cart
               </a>

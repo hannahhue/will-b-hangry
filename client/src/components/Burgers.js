@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 import { addToCart, addToWish } from '../utils/shopSlice';
 export default function Burgers({ currentPage, handlePageChange }) {
@@ -17,7 +18,6 @@ export default function Burgers({ currentPage, handlePageChange }) {
 
   const handleAddToCart = (burger) => {
     dispatch(addToCart(burger));
-    handlePageChange('Cart');
   };
 
   const handleAddToppings = (burger) => {
@@ -38,13 +38,13 @@ export default function Burgers({ currentPage, handlePageChange }) {
             <h2 className="price">
               <small>{burger.price}</small>
             </h2>
-            <a
+            <Link
+              to="/cart"
               className="buy"
-              href="#cart"
               onClick={() => handleAddToCart({ burgers: [{ ...burger }] })}
             >
               Add To Cart
-            </a>
+            </Link>
             <a
               href="#topping"
               className="buy"
