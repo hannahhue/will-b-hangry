@@ -1,87 +1,58 @@
-.product-container {
-    height: calc(100vh - 100px);
+.top {
     display: flex;
-    margin: 0;
-    justify-content: space-between;
-}
-
-.left {
-    flex: 1;
-    height: 100%;
-    display: flex;
-    align-items: center;
     justify-content: center;
-}
-
-.right {
-    flex: 1;
-    padding: 20px;
-    text-align: center;
-    display: block;
-}
-
-.title-topping {
-    margin-top: 100px;
-    font-size: 50px;
-    justify-content:center;
     align-items: center;
-    color: whitesmoke;
-    border-bottom: 1px solid whitesmoke;
-}
-
-.product-row {
-    display: flex;
-    float: right;
-    justify-content: center;
-    flex-wrap: nowrap;
-    width: 70%;
-}
-
-.topping-item {
-    font-size: 10px;
-    position: relative;
-    top: 20px;
-    left: -150px;
-}
-
-.checkbox {
-    position: relative;
-    top: 30px;
-}
-
-.product-button {
-    display: flex;
     margin: auto;
-    text-align: center;
-    flex-direction: row;
-    justify-content: space-between;
-    width: 100%;
+    margin-right: 400px;
 }
 
-.button-one {
-    display: inline-block;
-    top: 60px;
-    right: 20px;
+.sub {
+    font-size: 20px;
+    color: white;
+    margin-left: 10px;
 }
 
-.button-two {
-    display: inline-block;
-    top: 60px;
-    left: 20px;
+.kart {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
 }
 
-.product-button .aws-btn {
-    --button-default-height: 50px;
-    --button-default-font-size: 25px;
-    --button-default-border-radius: 25px;
-    --button-horizontal-padding: 20%;
-    --button-raise-level: 10px;
-    --button-hover-pressure: 2;
-    --transform-speed: 0.4s;
-    --button-primary-color: #131313;
-    --button-primary-color-dark: transparent;
-    --button-primary-color-light:whitesmoke;
-    --button-primary-color-hover: #f1dd04;
-    --button-primary-color-active: #f1dd04;
-    --button-primary-border: 1px solid transparent;
+.txt {
+    color: white;
+    text-decoration: none;
+}
+
+.button-18 {
+  align-items: center;
+  background-color: #ffce00;
+  border: 0;
+  border-radius: 100px;
+  box-sizing: border-box;
+  color: #0000;
+  cursor: pointer;
+  display: inline-flex;
+  font-family: -apple-system, system-ui, system-ui, "Segoe UI", Roboto, "Helvetica Neue", "Fira Sans", Ubuntu, Oxygen, "Oxygen Sans", Cantarell, "Droid Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Lucida Grande", Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  justify-content: center;
+  line-height: 20px;
+  max-width: 480px;
+  min-height: 40px;
+  min-width: 0px;
+  overflow: hidden;
+  padding: 0px;
+  padding-left: 20px;
+  padding-right: 20px;
+  text-align: center;
+  touch-action: manipulation;
+  transition: background-color 0.167s cubic-bezier(0.4, 0, 0.2, 1) 0s, box-shadow 0.167s cubic-bezier(0.4, 0, 0.2, 1) 0s, color 0.167s cubic-bezier(0.4, 0, 0.2, 1) 0s;
+  user-select: none;
+  -webkit-user-select: none;
+  vertical-align: middle;
+}
+
+.button-18:hover {
+    text-decoration: none;
 }

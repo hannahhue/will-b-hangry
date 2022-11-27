@@ -16,17 +16,6 @@ export default function CartItem({ item }) {
     );
   };
 
-  const onChange = (e) => {
-    const value = e.target.value;
-    if (value === '0') {
-      dispatch(
-        removeFromCart({
-          _id: item._id,
-        })
-      );
-    }
-  };
-
   return (
     <>
       {item.burgers ? (
