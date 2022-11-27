@@ -1,26 +1,54 @@
-import React, { useState } from 'react';
-import burgImg from '../images/burg.png';
+import React, { useState, useEffect } from 'react';
+
+import { useQuery } from '@apollo/client';
 import '../product.css';
 import { AwesomeButton } from 'react-awesome-button';
 // import 'react-awesome-button/dist/styles.css';
 import { useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
+import { QUERY_BURGERS, QUERY_TOPPINGS } from '../utils/queries';
+
+import {
+  updateDrink,
+  addToCart,
+  updateBurger,
+  updateTopping,
+  updateFry,
+} from '../utils/shopSlice';
 
 const Products = (props) => {
-  const state = useSelector((state) => state.shop);
+  const { data: burgerData } = useQuery(QUERY_BURGERS);
+  const { data: toppingData, loading } = useQuery(QUERY_TOPPINGS);
 
-  const [amount, setAmount] = useState(0);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    if (burgerData) {
+      dispatch(updateBurger(burgerData));
+    }
+    if (toppingData) {
+      dispatch(updateBurger(toppingData));
+    }
+  }, [dispatch, burgerData, toppingData]);
+
+  const state = useSelector((state) => state.shop);
+  // const [amount, setAmount] = useState(0);
 
   const { burgerId } = useParams();
   console.log(state.burgers);
+  let burger;
+  if (state.burgers) {
+    burger = state.burgers.filter((burger) => burger._id === burgerId);
+  }
 
-  const burger = state.burgers.filter((burger) => burger._id === burgerId);
   console.log(burgerId);
   console.log(burger);
 
   const toppings = state.toppings;
 
-  return (
+  return loading ? (
+    <>loading</>
+  ) : (
     <div className="product-container">
       <div className="left">
         <div className="card">
