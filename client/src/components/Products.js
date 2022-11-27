@@ -3,22 +3,21 @@ import burgImg from '../images/burg.png';
 import '../product.css';
 import { AwesomeButton } from 'react-awesome-button';
 // import 'react-awesome-button/dist/styles.css';
+import { useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 
 const Products = (props) => {
   const state = useSelector((state) => state.shop);
 
   const [amount, setAmount] = useState(0);
-  // const burger = {
-  //   id: 1,
-  //   img: burgImg,
-  //   name: 'Will Burger',
-  //   price: [12.99, 15.99],
-  //   description: 'Double Bacon Cheese Burger',
-  // };
 
-  const burger = state.wishList[0];
+  const { burgerId } = useParams();
+  console.log(state.burgers);
+
+  const burger = state.burgers.filter((burger) => burger._id === burgerId);
+  console.log(burgerId);
   console.log(burger);
+
   const toppings = state.toppings;
 
   return (
@@ -30,7 +29,7 @@ const Products = (props) => {
           </div>
           <div className="contentBox">
             <h3>{burger.name}</h3>
-            <h2 className="price">{burger.price[amount]}</h2>
+            <h2 className="price">{burger.price}</h2>
             <h3>{burger.description}</h3>
           </div>
         </div>

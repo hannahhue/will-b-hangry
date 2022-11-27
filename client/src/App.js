@@ -16,6 +16,7 @@ import Test from './pages/Test';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
 import Container from './components/Container';
+import Topping from './components/Products';
 import Navbar from './components/Navbar';
 
 const httpLink = createHttpLink({
@@ -60,6 +61,8 @@ function App() {
                   />
                 }
               />
+
+              <Route path="/topping/:burgerId" element={<Topping />} />
             </Routes>
           </Provider>
         </div>
