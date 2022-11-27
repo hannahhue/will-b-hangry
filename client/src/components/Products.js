@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import burgImg from '../images/burg.png';
 import '../product.css';
 import { AwesomeButton } from 'react-awesome-button';
-// import 'react-awesome-button/dist/styles.css';
+import 'react-awesome-button/dist/styles.css';
 import { useDispatch, useSelector } from 'react-redux';
 
 const Products = (props) => {

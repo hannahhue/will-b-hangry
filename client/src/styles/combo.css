@@ -1,3 +1,44 @@
-.combo-container {
-    margin: 100px;
+.combo-h1 {
+    margin-top: 100px;
+    font-size: 50px;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    color: whitesmoke;
+    border-bottom: 1px solid whitesmoke;
+}
+
+.combo-button {
+    display: flex;
+    margin: auto;
+    text-align: center;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 90%;
+}
+
+.button-one-combo {
+    display: inline-block;
+    right: 20px;
+}
+
+.button-two-combo {
+    display: inline-block;
+    left: 20px;
+}
+
+.combo-button .aws-btn {
+    --button-default-height: 50px;
+    --button-default-font-size: 25px;
+    --button-default-border-radius: 25px;
+    --button-horizontal-padding: 20%;
+    --button-raise-level: 10px;
+    --button-hover-pressure: 2;
+    --transform-speed: 0.4s;
+    --button-primary-color: #131313;
+    --button-primary-color-dark: transparent;
+    --button-primary-color-light:whitesmoke;
+    --button-primary-color-hover: #f1dd04;
+    --button-primary-color-active: #f1dd04;
+    --button-primary-border: 1px solid transparent;
 }
