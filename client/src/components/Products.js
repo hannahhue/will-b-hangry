@@ -17,8 +17,8 @@ import {
 } from '../utils/shopSlice';
 
 const Products = (props) => {
-  const { data: burgerData } = useQuery(QUERY_BURGERS);
-  const { data: toppingData, loading } = useQuery(QUERY_TOPPINGS);
+  const { data: burgerData, loading } = useQuery(QUERY_BURGERS);
+  const { data: toppingData } = useQuery(QUERY_TOPPINGS);
 
   const dispatch = useDispatch();
 
@@ -27,7 +27,7 @@ const Products = (props) => {
       dispatch(updateBurger(burgerData));
     }
     if (toppingData) {
-      dispatch(updateBurger(toppingData));
+      dispatch(updateTopping(toppingData));
     }
   }, [dispatch, burgerData, toppingData]);
 
@@ -36,6 +36,7 @@ const Products = (props) => {
 
   const { burgerId } = useParams();
   console.log(state.burgers);
+
   let burger;
   if (state.burgers) {
     burger = state.burgers.filter((burger) => burger._id === burgerId);
