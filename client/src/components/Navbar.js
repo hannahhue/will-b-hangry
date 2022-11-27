@@ -58,7 +58,9 @@ function Nav() {
                   <li className="nav-item">
                     <Link to="/cart" className="link-c">
                       🛒
-                      <span class="badge badge-light">{cart.combo.length}</span>
+                      <span className="badge badge-light">
+                        {cart.combo.length}
+                      </span>
                     </Link>
                   </li>
                 </ul>
