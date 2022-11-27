@@ -8,13 +8,12 @@ export default function CartItem({ item }) {
   const state = useSelector((state) => state.shop);
   const dispatch = useDispatch();
 
-  const handleRemoveFromCart = (item) => {
+  const handleRemoveFromCart = (burger) => {
     dispatch(
       removeFromCart({
         _id: item._id,
       })
     );
-    // idbPromise('cart', 'delete', { ...item });
   };
 
   const onChange = (e) => {
@@ -25,7 +24,6 @@ export default function CartItem({ item }) {
           _id: item._id,
         })
       );
-      // idbPromise('cart', 'delete', { ...item });
     }
   };
 
