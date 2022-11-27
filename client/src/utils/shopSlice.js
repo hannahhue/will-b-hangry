@@ -71,7 +71,7 @@ export const shopSlice = createSlice({
 
     removeFromCart: (state, action) => {
       state.cart = state.cart.filter(
-        (burger) => burger[0]._id !== action.payload._id
+        (product) => product._id !== action.payload._id
       );
     },
 

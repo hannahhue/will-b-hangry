@@ -94,7 +94,7 @@ export default function Cart({ currentPage, handlePageChange }) {
                 {Auth.loggedIn() ? (
                   <a className="thankyou">Checkout</a>
                 ) : (
-                  <span>(log in to check out)</span>
+                  <span>Login to check out!</span>
                 )}
               </div>
             </div>
