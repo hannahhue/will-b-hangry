@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
+
 import { addToCart, addToWish } from '../utils/shopSlice';
 export default function Burgers({ currentPage, handlePageChange }) {
   // const { loading, data } = useQuery(QUERY_BURGERS);
@@ -39,7 +40,7 @@ export default function Burgers({ currentPage, handlePageChange }) {
               <small>{burger.price}</small>
             </h2>
             <Link
-              to={'/cart'}
+              to="/cart"
               className="buy"
               onClick={() => handleAddToCart({ burgers: [{ ...burger }] })}
             >

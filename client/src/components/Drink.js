@@ -11,7 +11,7 @@ export default function Drink({ drinks }) {
             <div className="imgBox">
               <img
                 className="food"
-                src={`/images/${drink}.image}`}
+                src={`/images/${drink.image}`}
                 alt="drink"
               />
             </div>

@@ -15,20 +15,17 @@ db.once('open', async () => {
   const fry = await Fry.insertMany([
     {
       name: 'Fry',
-      image:
-        'https://littlesunnykitchen.com/wp-content/uploads/2020/09/French-Fry-Seasoning-7.jpg',
-      price: 1.99,
+      image: 'fry.png',
+      price: 3.99,
     },
     {
       name: 'Poutine',
-      image:
-        'https://littlesunnykitchen.com/wp-content/uploads/2020/09/French-Fry-Seasoning-7.jpg',
-      price: 7.99,
+      image: 'poutine.webp',
+      price: 5.99,
     },
     {
       name: 'Cheese Fries',
-      image:
-        'https://littlesunnykitchen.com/wp-content/uploads/2020/09/French-Fry-Seasoning-7.jpg',
+      image: 'cheese.png',
       price: 5.99,
     },
   ]);
@@ -65,21 +62,18 @@ db.once('open', async () => {
   const drink = await Drink.insertMany([
     {
       name: 'Pepsi',
-      image:
-        'https://daanapaanisupermarket.ca/wp-content/uploads/2021/11/pepsi-soft-drink.jpg',
-      price: 1.99,
+      image: 'pepsi-drink.png',
+      price: 3.99,
     },
     {
       name: 'Fanta',
-      image:
-        'https://daanapaanisupermarket.ca/wp-content/uploads/2021/11/fanta-soft-drink-can-300ml.jpg',
-      price: 1.99,
+      image: 'fanta-drink.png',
+      price: 3.99,
     },
     {
       name: 'Coca-cola',
-      image:
-        'https://daanapaanisupermarket.ca/wp-content/uploads/2021/11/coca-cola-soft-drink-can-300ml.jpg',
-      price: 1.99,
+      image: 'coke-drink.png',
+      price: 3.99,
     },
   ]);
   console.log('Drink seeded');
