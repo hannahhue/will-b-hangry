@@ -3,7 +3,7 @@ import Fry from '../components/Fry';
 import Drink from '../components/Drink';
 import '../styles/combo.css';
 import { AwesomeButton } from 'react-awesome-button';
-import 'react-awesome-button/dist/styles.css';
+// import 'react-awesome-button/dist/styles.css';
 
 export default function Combo({ currentPage, handlePageChange }) {
   return (
