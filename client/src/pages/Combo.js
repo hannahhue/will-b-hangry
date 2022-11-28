@@ -54,7 +54,11 @@ export default function Combo({ burger, selectedToppings }) {
   // render html
   return (
     <main>
-      <div className="combo-h1">Customize Your Meal</div>
+      <div className="logo">
+        <b>
+          Cust<span>omize</span> <span>Me</span>al
+        </b>
+      </div>
       <div className="row">
         <Fry
           fries={fries}

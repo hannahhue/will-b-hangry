@@ -16,8 +16,7 @@ export default function CartItem({ item }) {
       })
     );
   };
-
-  // render html
+  console.log(item);
   return (
     <>
       {item.burgers ? (
@@ -49,27 +48,27 @@ export default function CartItem({ item }) {
       )}
 
       {item.fries ? (
-        item.fries.map((fry) => {
+        item.fries.map((fry) => (
           <tr key={fry._id}>
             <td>{/* <a onClick={() => handleRemoveFromCart(fry)}>🗑️</a> */}</td>
             <td>{fry.name}</td>
             <td className="right">{fry.price}</td>
-          </tr>;
-        })
+          </tr>
+        ))
       ) : (
         <></>
       )}
 
       {item.drinks ? (
-        item.drinks.map((drink) => {
+        item.drinks.map((drink) => (
           <tr key={drink._id}>
             <td>
               {/* <a onClick={() => handleRemoveFromCart(drink)}>🗑️</a> */}
             </td>
             <td>{drink.name}</td>
             <td className="right">{drink.price}</td>
-          </tr>;
-        })
+          </tr>
+        ))
       ) : (
         <></>
       )}

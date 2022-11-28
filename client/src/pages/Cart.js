@@ -67,14 +67,15 @@ export default function Cart({ currentPage, handlePageChange }) {
       if (state.cart.combo[i].drinks && state.cart.combo[i].drinks.length) {
         sum += state.cart.combo[i].drinks[0].price;
       }
-
-      console.log(sum);
     }
     console.log(sum);
     return sum.toFixed(2);
   }
 
+<<<<<<< HEAD
   // render html
+=======
+>>>>>>> 1182e32661c24ea448956a093549c4136b533abb
   return (
     <main>
       {/* sign text */}
