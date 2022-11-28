@@ -68,11 +68,25 @@ export const shopSlice = createSlice({
     addToWish: (state, action) => {
       state.wishList.push(action.payload);
     },
-
+    // _id:xxx
     removeFromCart: (state, action) => {
-      state.cart = state.cart.filter(
-        (product) => product._id !== action.payload._id
-      );
+      console.log(action.payload._id);
+
+      const result = state.cart.combo.filter((item) => {
+        console.log(item.burgers[0]._id);
+        if (item.burgers[0]._id !== action.payload._id) {
+          return true;
+        } else {
+          return false;
+        }
+      });
+
+      console.log(result);
+      state.cart.combo = [...result];
+
+      // state.cart = state.cart.filter(
+      //   (product) => product._id !== action.payload._id
+      // );
     },
 
     clearCart: (state) => {},

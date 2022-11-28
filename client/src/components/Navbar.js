@@ -50,6 +50,11 @@ function Nav() {
                       </Link>
                     )}
                   </li>
+                  {/* <li className="nav-item">
+                    <Link to="/cart" className="link">
+                      Cart
+                    </Link>
+                  </li> */}
                   <li className="nav-item">
                     <Link to="/cart" className="link-c">
                       🛒

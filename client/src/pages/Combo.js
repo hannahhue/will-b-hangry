@@ -45,7 +45,7 @@ export default function Combo({ burger, selectedToppings }) {
       dispatch(updateFry(friesData));
     }
   }, [dispatch, drinksData, state.drinks, loading, friesData, state.fries]);
-
+  console.log(selectedToppings);
   return (
     <main>
       <div className="combo-h1">Customize Your Meal</div>
@@ -63,14 +63,6 @@ export default function Combo({ burger, selectedToppings }) {
           burger={burger}
           selectedToppings={selectedToppings}
         />
-      </div>
-      <div className="combo-button">
-        <AwesomeButton type="primary" className="button-one-combo">
-          Go Back
-        </AwesomeButton>
-        {/* <AwesomeButton type="primary" className="button-two-combo">
-          Add To Cart
-        </AwesomeButton> */}
       </div>
     </main>
   );
