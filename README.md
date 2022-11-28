@@ -13,17 +13,25 @@ Want to order from a restaurant, select the any item and modify as you wish. Che
 
 ## Installation
 
-No install required to run but if you wish to keep it offline and view the menu whenever you please, feel free to hit our download button!
+No install required!
 
-![alt text](assets/images/screenshot.png)
+Just load up our site
+
+site: https://will-b-hangry.herokuapp.com/
 
 ## Usage
 
-Provide instructions and examples for use. Include screenshots as needed.
+Login or Signup
+![alt text](client/src/images/log-sign.PNG)
 
-To add a screenshot, create an assets/images folder in your repository and upload your screenshot to it. Then, using the relative file path, add it to your README using the following syntax:
+From the home page hover over items to add or customize
+![alt text](client/src/images/home-pg.PNG)
 
-![alt text](assets/images/screenshot.png)
+Make it a combo!
+![alt text](client/src/images/)
+
+Last minuite changes to cart or checkout!
+![alt text](client/src/images/cart-pg.PNG)
 
 ## Credits
 

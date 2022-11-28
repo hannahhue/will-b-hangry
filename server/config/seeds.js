@@ -1,3 +1,4 @@
+//define
 const db = require('./connection');
 const {
   User,
@@ -9,6 +10,7 @@ const {
   Combo,
 } = require('../models');
 
+//on opening app run seeds
 db.once('open', async () => {
   await Fry.deleteMany();
 

@@ -1,5 +1,7 @@
+//define
 const { Schema, model } = require('mongoose');
 
+//combo schema each will hold the array of selected drinks toppings ect per each order
 const comboSchema = new Schema({
   burgers: [
     {
