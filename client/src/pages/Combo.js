@@ -1,3 +1,4 @@
+//import
 import React, { useEffect, useState } from 'react';
 import { useQuery } from '@apollo/client';
 import { useDispatch, useSelector } from 'react-redux';
@@ -6,6 +7,7 @@ import Drink from '../components/Drink';
 import '../styles/combo.css';
 import { AwesomeButton } from 'react-awesome-button';
 import { QUERY_DRINKS, QUERY_FRY } from '../utils/queries';
+
 // import 'react-awesome-button/dist/styles.css';
 import {
   updateDrink,
@@ -15,6 +17,7 @@ import {
   updateFry,
 } from '../utils/shopSlice';
 
+//call data from global state
 export default function Combo({ burger, selectedToppings }) {
   const { data: drinksData, loading } = useQuery(QUERY_DRINKS);
   const { data: friesData } = useQuery(QUERY_FRY);
@@ -27,6 +30,7 @@ export default function Combo({ burger, selectedToppings }) {
   const [fries, setFries] = useState([]);
   const [selectedFry, setSelectedFry] = useState([]);
 
+  // per drink show
   useEffect(() => {
     if (state.drinks.length) {
       console.log(state.drinks);
@@ -46,9 +50,15 @@ export default function Combo({ burger, selectedToppings }) {
     }
   }, [dispatch, drinksData, state.drinks, loading, friesData, state.fries]);
   console.log(selectedToppings);
+
+  // render html
   return (
     <main>
-      <div className="combo-h1">Customize Your Meal</div>
+      <div className="logo">
+        <b>
+          Cust<span>omize</span> <span>Me</span>al
+        </b>
+      </div>
       <div className="row">
         <Fry
           fries={fries}

@@ -1,13 +1,14 @@
+//import
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-
-// import { idbPromise } from '../utils/helpers';
 import { removeFromCart } from '../utils/shopSlice';
 
+// grab global state
 export default function CartItem({ item }) {
   const state = useSelector((state) => state.shop);
   const dispatch = useDispatch();
 
+  // per click filter item from cart
   const handleRemoveFromCart = (item) => {
     dispatch(
       removeFromCart({
