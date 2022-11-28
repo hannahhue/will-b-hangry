@@ -128,12 +128,11 @@ const Topping = (props) => {
             className="button-one"
             onClick={() => toggleComboPage((pre) => !pre)}
           >
-            <a href="#makeItCombo">make It Combo</a>
+            <a href="#makeItCombo">Make It Combo</a>
           </button>
 
           <button
             className="button-two"
-            role="button"
             type="primary"
             onClick={handleAddToCart}
           >
