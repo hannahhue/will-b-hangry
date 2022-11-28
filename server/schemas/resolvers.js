@@ -64,10 +64,10 @@ const resolvers = {
       const NewCombo = new Combo(combo[0]);
       console.log(await NewCombo.populate('burgers'));
       // const order = new Order({ products: args.products });
-      // const line_items = [];
+      const line_items = [];
 
       // const { products } = await order.populate('products');
-
+      const { burgers } = await NewCombo.populate('burgers');
       // for (let i = 0; i < products.length; i++) {
       //   const product = await stripe.products.create({
       //     name: products[i].name,
