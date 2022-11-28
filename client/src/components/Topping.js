@@ -27,7 +27,7 @@ const Topping = (props) => {
   const { burgerId } = useParams();
 
   let section1 = [];
-  let section2 = [];
+  // let section2 = [];
 
   useEffect(() => {
     if (state.burgers.length) {
@@ -126,16 +126,14 @@ const Topping = (props) => {
         <div className="container-button">
           <button
             className="button-one"
-            type="primary"
             onClick={() => toggleComboPage((pre) => !pre)}
           >
-            <Link className="txt" to={'/topping'}>
-              Make It A Combo
-            </Link>
+            <a href="#makeItCombo">make It Combo</a>
           </button>
 
           <button
             className="button-two"
+            role="button"
             type="primary"
             onClick={handleAddToCart}
           >
@@ -144,13 +142,13 @@ const Topping = (props) => {
             </Link>
           </button>
       </div>
-      {/* {comboPage ? (
-        <div id="makeItCombo"> */}
-      <Combo burger={burger} selectedToppings={selectedToppings} />
-      {/* </div>
+      {comboPage ? (
+        <div id="makeItCombo">
+          <Combo burger={burger} selectedToppings={selectedToppings} />
+        </div>
       ) : (
         <></>
-      )} */}
+      )}
     </>
   );
 };

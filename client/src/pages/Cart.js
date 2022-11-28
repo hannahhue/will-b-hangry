@@ -119,25 +119,10 @@ export default function Cart({ currentPage, handlePageChange }) {
       if (state.cart.combo[i].drinks && state.cart.combo[i].drinks.length) {
         sum += state.cart.combo[i].drinks[0].price;
       }
-
-      console.log(sum);
     }
     console.log(sum);
     return sum.toFixed(2);
   }
-
-  // const getTotalPrice = (items) =>
-  //   items.map((item) => item.price).reduce((acc, value) => acc + value, 0);
-
-  // const result = getTotal(cart);
-
-  // console.log({ result });
-
-  // const sum = (combo) => {
-  //   return combo.reduce((accumulator, number) => {
-  //     return number + accumulator;
-  //   }, 0);
-  // };
 
   return (
     <main>
