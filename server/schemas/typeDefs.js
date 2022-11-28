@@ -47,7 +47,7 @@ const typeDefs = gql`
 
   type Burger {
     _id: ID
-    name: String!
+    name: String
     description: String
     image: String
     price: Float
@@ -55,6 +55,20 @@ const typeDefs = gql`
 
   type Checkout {
     session: ID
+  }
+
+  input burgerData {
+    _id: ID
+    name: String
+    description: String
+    image: String
+    price: Float
+  }
+  input CheckoutData {
+    burgers: [ID]
+    fries: [ID]
+    drinks: [ID]
+    toppings: [ID]
   }
 
   type Query {
@@ -67,7 +81,7 @@ const typeDefs = gql`
     topping(_id: ID!): Topping
     toppings: [Topping]
     orders: [Order]
-    checkout(burgers: [ID], fries: [ID], drinks: [ID], toppings: [ID]): Checkout
+    checkout(combo: [CheckoutData]): Checkout
   }
 
   type Mutation {
