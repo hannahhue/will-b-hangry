@@ -117,17 +117,22 @@ const Topping = (props) => {
               <h3>{burger.description}</h3>
             </div>
           </div>
-
-          <div className="">
+          
             <div className="topping-item">
               <div className="product-row">{section1}</div>
             </div>
-          </div>
-        </div>
-        <div className="kart">
+        <div className="container-button">
+        <button
+            className="button-one"
+            type="primary"
+            // onClick={handleAddToCart}
+          >
+            <Link className="txt" to={'/combo'}>
+              Make It A Combo
+            </Link>
+          </button>
           <button
-            className="button-18"
-            role="button"
+            className="button-two"
             type="primary"
             onClick={handleAddToCart}
           >
@@ -135,7 +140,7 @@ const Topping = (props) => {
               Add To Cart
             </Link>
           </button>
-        </div>
+      </div>
       </div>
       {comboPage ? (
         <div id="makeItCombo">
