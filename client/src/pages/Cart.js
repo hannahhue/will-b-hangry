@@ -52,13 +52,13 @@ export default function Cart({ currentPage, handlePageChange }) {
   function submitCheckout() {
     const newCombo = [
       {
-        burgers: [state.cart.combo.burgers[0]._id],
+        burgers: [state.cart.combo[0].burgers[0]._id],
         toppings: [
-          state.cart.combo.toppings[0]._id,
-          state.cart.combo.toppings[1]._id,
+          state.cart.combo[0].toppings[0]._id,
+          state.cart.combo[0].toppings[1]._id,
         ],
-        fries: [state.cart.combo.fries[0]._id],
-        drinks: [state.cart.combo.drinks[0]._id],
+        // fries: [state.cart.combo[0].fries[0]._id],
+        // drinks: [state.cart.combo[0].drinks[0]._id],
       },
     ];
 
