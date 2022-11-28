@@ -1,16 +1,15 @@
+//import
 import React, { useState, useEffect } from 'react';
-
 import { useQuery } from '@apollo/client';
-// import { AwesomeButton } from 'react-awesome-button';
 import { useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { QUERY_BURGERS, QUERY_TOPPINGS } from '../utils/queries';
 import Combo from '../pages/Combo';
 import { addToCart, updateBurger, updateTopping } from '../utils/shopSlice';
 import '../styles/product.css';
-// import 'react-awesome-button/dist/styles.css';
 import { Link } from 'react-router-dom';
 
+// grab data from global state
 const Topping = (props) => {
   const { data: burgerData, loading } = useQuery(QUERY_BURGERS);
   const { data: toppingData, loading: toppingLoading } =
@@ -29,6 +28,7 @@ const Topping = (props) => {
   let section1 = [];
   // let section2 = [];
 
+  // per length display
   useEffect(() => {
     if (state.burgers.length) {
       console.log(state.burgers);
@@ -50,6 +50,7 @@ const Topping = (props) => {
     }
   }, [toppingData, dispatch]);
 
+  // adding toppings within burg array
   function handleSelectToppings(e, choice) {
     if (e.target.checked) {
       setToppings([...selectedToppings, choice]);
@@ -63,6 +64,7 @@ const Topping = (props) => {
     }
   }
 
+  // pushing either single burg or toppings inc to cart
   function handleAddToCart() {
     const newItem = {
       burgers: [burger],
@@ -71,6 +73,7 @@ const Topping = (props) => {
     dispatch(addToCart(newItem));
   }
 
+  // display each topping btn
   if (toppingData) {
     for (let i = 0; i < 8; i++) {
       section1.push(
@@ -90,6 +93,7 @@ const Topping = (props) => {
     }
   }
 
+  // render html
   return loading || toppingLoading ? (
     <>loading</>
   ) : (

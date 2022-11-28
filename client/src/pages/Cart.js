@@ -1,3 +1,4 @@
+// import
 import React, { useEffect } from 'react';
 import Burgers from '../components/Burgers';
 import { useDispatch, useSelector } from 'react-redux';
@@ -6,8 +7,11 @@ import Auth from '../utils/auth';
 import { QUERY_CHECKOUT } from '../utils/queries';
 import { useLazyQuery } from '@apollo/client';
 import { loadStripe } from '@stripe/stripe-js';
+
+// api key
 const stripePromise = loadStripe('pk_test_TYooMQauvdEDq54NiTphI7jx');
 
+// cart grab from global state
 export default function Cart({ currentPage, handlePageChange }) {
   const state = useSelector((state) => state.shop);
   const { cart } = state;
@@ -22,33 +26,7 @@ export default function Cart({ currentPage, handlePageChange }) {
     }
   }, [data]);
 
-  // function calculateTotal() {
-  //   let sum = 0;
-  //   state.combo.forEach((item) => {
-  //     sum += item.price * item.purchaseQuantity;
-  //   });
-  //   return sum.toFixed(2);
-  // }
-
-  /*
-  cart: {
-      combo: [
-
-        { burgers: [{id:.., name:'burger1',price:10,}]
-          topping: [{},{},{}],
-          fries: [{}],
-          drinks: [],
-        },
-
-        { burgers:[ name:'burger1',price:10,]
-          topping: [name:xxx... ],
-          fries: [name:xxx...],
-          drinks: [name:xxx...],
-        },
-      ],
-    }
-  */
-
+  // grab data
   function submitCheckout() {
     const newCombo = [
       {
@@ -62,43 +40,13 @@ export default function Cart({ currentPage, handlePageChange }) {
       },
     ];
 
-    // state.cart.combo.forEach((item) => {
-    // for (const iterator of item) {
-
-    //   newCombo.push(Object.keys(item[iterator])
-    //     .filter((key) => key.includes('_id'))
-    //     .reduce((cur, key) => {
-    //       return Object.assign(cur, { [key]: item[iterator][key] });
-    //     }, {}))
-
-    // }
-
     console.log(newCombo);
     getCheckout({
       variables: { combo: newCombo },
     });
   }
 
-  /*
-  cart: {
-      combo: [
-
-        { burgers: [{id:.., name:'burger1',price:10,}]
-          topping: [{},{},{}],
-          fries: [{}],
-          drinks: [],
-        },
-
-        { burgers:[ name:'burger1',price:10,]
-          topping: [name:xxx... ],
-          fries: [name:xxx...],
-          drinks: [name:xxx...],
-        },
-
-      ],
-    }
-  */
-
+  // add prices together for total sum
   function findSum() {
     let sum = 0;
 
@@ -124,6 +72,10 @@ export default function Cart({ currentPage, handlePageChange }) {
     return sum.toFixed(2);
   }
 
+<<<<<<< HEAD
+  // render html
+=======
+>>>>>>> 1182e32661c24ea448956a093549c4136b533abb
   return (
     <main>
       {/* sign text */}

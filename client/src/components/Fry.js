@@ -1,7 +1,9 @@
+// import
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import '../styles/Fry.css';
 
+//grab choice and push to cart
 export default function Fry({ fries, selectedFry, setSelectedFry }) {
   function handleCheckbox(choice, e) {
     if (e.target.checked) {
@@ -13,8 +15,9 @@ export default function Fry({ fries, selectedFry, setSelectedFry }) {
     setCheckbox((current) => !current);
   }
   console.log(selectedFry);
-
   const [checkBoxStatus, setCheckbox] = useState(false);
+
+  // render html
   return (
     <div className="fry-main">
       {fries.map((fry) => (

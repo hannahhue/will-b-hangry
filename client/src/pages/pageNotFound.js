@@ -1,5 +1,7 @@
+//impoet react
 import React from 'react';
 
+//if cannot find page or err produce err page
 const NoMatch = () => {
   return (
     <div>

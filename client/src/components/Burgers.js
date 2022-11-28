@@ -1,25 +1,20 @@
+// import
 import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 
 import { addToCart, addToWish } from '../utils/shopSlice';
+
+// grab global
 export default function Burgers({ currentPage, handlePageChange }) {
-  // const { loading, data } = useQuery(QUERY_BURGERS);
   const state = useSelector((state) => state.shop);
   const dispatch = useDispatch();
-
-  // const [burgers, setBurger] = useState([]);
-
-  // useEffect(() => {
-  //   if (data) {
-  //     setBurger(data.burgers);
-  //   }
-  // }, [data]);
 
   const handleAddToCart = (burger) => {
     dispatch(addToCart(burger));
   };
 
+  // render html per burg card
   return (
     <>
       {state.burgers.map((burger) => (

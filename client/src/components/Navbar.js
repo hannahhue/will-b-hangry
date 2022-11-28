@@ -1,3 +1,4 @@
+//import
 import React from 'react';
 import Auth from '../utils/auth';
 import { Link } from 'react-router-dom';
@@ -5,6 +6,7 @@ import iconImg from '../images/icon.png';
 import auth from '../utils/auth';
 import { useDispatch, useSelector } from 'react-redux';
 
+//will be present on each page
 function Nav() {
   const state = useSelector((state) => state.shop);
   const { cart } = state;
@@ -35,6 +37,7 @@ function Nav() {
                       Home
                     </Link>
                   </li>
+                  {/* check login auth, show correct btn */}
                   <li className="nav-item">
                     {auth.loggedIn() ? (
                       <a
@@ -50,11 +53,6 @@ function Nav() {
                       </Link>
                     )}
                   </li>
-                  {/* <li className="nav-item">
-                    <Link to="/cart" className="link">
-                      Cart
-                    </Link>
-                  </li> */}
                   <li className="nav-item">
                     <Link to="/cart" className="link-c">
                       🛒
