@@ -51,14 +51,25 @@ body {
   border-radius: 10px;
 }
 
+.about-card {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  height: 100%;
+}
+
 .card-title {
-  font-size: large;
+  font-size: 30px;
 }
 
 .card-text {
   font-size: 15px;
   margin-left: 20px;
-
+  width: 100%;
+  padding: 30px 30px;
+  font-size: 20px;
 }
 
 .about {
