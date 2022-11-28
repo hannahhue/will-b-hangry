@@ -61,6 +61,11 @@ function Nav() {
                       </span>
                     </Link>
                   </li>
+                  <li className="nav-item">
+                    <Link to="/success" className="link-c">
+                      success
+                    </Link>
+                  </li>
                 </ul>
               </div>
             </nav>
