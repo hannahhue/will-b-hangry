@@ -82,3 +82,11 @@ export const QUERY_USER = gql`
     }
   }
 `;
+
+export const QUERY_CHECKOUT = gql`
+  query Checkout($combo: [CheckoutData]) {
+    checkout(combo: $combo) {
+      session
+    }
+  }
+`;
