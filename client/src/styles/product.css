@@ -26,6 +26,14 @@
     color: white;
     text-decoration: none;
  }
+
+ .topping-item {
+   display: flex;
+   text-align: center;
+   justify-content: center;
+   width: auto;
+   height: auto;
+ }
  .container-button{
     display: flex;
     justify-content: center;
@@ -66,7 +74,8 @@
     float: left;
     height: 100%;
     position: relative;
-    left: -20px
+    left: -20px;
+    text-decoration: none;
  }
  .button-one:hover {
     text-decoration: none;
@@ -101,4 +110,9 @@
  }
  .button-two:hover {
     text-decoration: none;
+ }
+
+ .combo-button {
+   color: white;
+   text-decoration: none;
  }
