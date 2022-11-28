@@ -11,20 +11,9 @@ export default function CartItem({ item }) {
   const handleRemoveFromCart = (burger) => {
     dispatch(
       removeFromCart({
-        _id: item._id,
+        _id: burger._id,
       })
     );
-  };
-
-  const onChange = (e) => {
-    const value = e.target.value;
-    if (value === '0') {
-      dispatch(
-        removeFromCart({
-          _id: item._id,
-        })
-      );
-    }
   };
 
   return (

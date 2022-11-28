@@ -116,6 +116,12 @@ export default function Cart({ currentPage, handlePageChange }) {
 
   // console.log({ result });
 
+  // const sum = (combo) => {
+  //   return combo.reduce((accumulator, number) => {
+  //     return number + accumulator;
+  //   }, 0);
+  // };
+
   return (
     <main>
       {/* sign text */}
@@ -157,14 +163,14 @@ export default function Cart({ currentPage, handlePageChange }) {
               <div className="bar center">
                 <div className="barcode"></div>
                 <br />
-                Total: ${findSum()}
+                {/* <p>Total: ${findSum()}</p> */}
                 <br />
                 {Auth.loggedIn() ? (
                   <a className="thankyou" onClick={submitCheckout}>
                     Checkout
                   </a>
                 ) : (
-                  <span>(log in to check out)</span>
+                  <span>Login to check out!</span>
                 )}
               </div>
             </div>
