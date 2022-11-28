@@ -63,18 +63,18 @@ db.once('open', async () => {
 
   const drink = await Drink.insertMany([
     {
-      name: 'Pepsi',
-      image: 'pepsi-drink.png',
+      name: 'Vanilla Milkshake',
+      image: 'vanil.png',
       price: 3.99,
     },
     {
-      name: 'Fanta',
-      image: 'fanta-drink.png',
+      name: 'Chocolate Milkshake',
+      image: 'chocolate.png',
       price: 3.99,
     },
     {
-      name: 'Coca-cola',
-      image: 'coke-drink.png',
+      name: 'Strawberry Milkshake',
+      image: 'straw.png',
       price: 3.99,
     },
   ]);

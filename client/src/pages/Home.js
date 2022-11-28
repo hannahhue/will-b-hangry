@@ -1,14 +1,15 @@
 // import
-import React, { useEffect } from 'react';
-import { useQuery } from '@apollo/client';
-import Burgers from '../components/Burgers';
+import React, { useEffect } from "react";
+import { useQuery } from "@apollo/client";
+import Burgers from "../components/Burgers";
+import restaurant from '../images/wbh.jpg';
 
 import {
   QUERY_BURGERS,
   QUERY_TOPPINGS,
   QUERY_DRINKS,
   QUERY_FRY,
-} from '../utils/queries';
+} from "../utils/queries";
 
 // to reducer function to modify global state
 import {
@@ -17,11 +18,11 @@ import {
   updateBurger,
   updateTopping,
   updateFry,
-} from '../utils/shopSlice';
+} from "../utils/shopSlice";
 
 // function to access global state
-import { useDispatch, useSelector } from 'react-redux';
-import Test2 from './Test2';
+import { useDispatch, useSelector } from "react-redux";
+import Test2 from "./Test2";
 
 export default function Home({ currentPage, handlePageChange }) {
   //get global state
@@ -66,14 +67,21 @@ export default function Home({ currentPage, handlePageChange }) {
 
       <div className="about-card">
         <div className="card-body">
-          <h3 className="card-title">Since 1990</h3>
+          <h3 className="card-title">Since 2022</h3>
           <p className="card-text">
-            Wills opened on Thanksgiving Day 1990. Chef / Owner Will Silver
-            began frying burgers and selling them to restaurants and his
-            neighbors out of a small kitchen. Today, the beloved restaurant and
-            burger shop celebrates 27 years of classic, made from scratch
-            cooking.
+            <span>Will Be Hangry</span> was created by developers- Will, Ben,
+            and Hannah who have a love for unpretentious, delicious, mouth
+            watering burgers. Today, we built a modern burger restaurant with a
+            retro feel, that serves up the classics. Burgers, Fries, and Shakes!
+            <br></br>
+            From a small hole in a wall restaurant we been pumping out big
+            flavours that our customers love and come by the droves for. In
+            order to provide the best service for our customers we made this web
+            application, where you are able to place pick up orders in an effort to
+            avoid the long wait times, this is because every burger is made fresh when
+            ordered! We kill, ground and flavour the cow as soon you click submit.
           </p>
+          <img src={restaurant} alt="inside restaurant"></img>
         </div>
       </div>
     </main>
