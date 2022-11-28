@@ -31,15 +31,16 @@ export default function Cart({ currentPage, handlePageChange }) {
   //   });
   // }
 
-  function findSum() {
-    let sum = 0;
-    for (let i = 0; i < state.cart.combo.length; i++) {
-      sum += i.price;
-      console.log(sum);
-    }
-    console.log(sum);
-    return sum;
-  }
+  // function findSum() {
+  //   let sum = 0;
+  //   for (let i = 0; i < state.cart.combo.length; i++) {
+  //     sum += state.cart[i].combo.price;
+  //     console.log(state.cart.combo.length);
+  //   }
+  //   console.log(state.cart.combo.length);
+  //   console.log(sum);
+  //   return sum;
+  // }
 
   // const getTotalPrice = (items) =>
   //   items.map((item) => item.price).reduce((acc, value) => acc + value, 0);
@@ -47,6 +48,12 @@ export default function Cart({ currentPage, handlePageChange }) {
   // const result = getTotal(cart);
 
   // console.log({ result });
+
+  // const sum = (combo) => {
+  //   return combo.reduce((accumulator, number) => {
+  //     return number + accumulator;
+  //   }, 0);
+  // };
 
   return (
     <main>
@@ -89,7 +96,7 @@ export default function Cart({ currentPage, handlePageChange }) {
               <div className="bar center">
                 <div className="barcode"></div>
                 <br />
-                Total: ${findSum()}
+                {/* <p>Total: ${findSum()}</p> */}
                 <br />
                 {Auth.loggedIn() ? (
                   <a className="thankyou">Checkout</a>
