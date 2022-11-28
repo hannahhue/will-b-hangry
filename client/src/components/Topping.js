@@ -129,12 +129,13 @@ const Topping = (props) => {
             type="primary"
             onClick={() => toggleComboPage((pre) => !pre)}
           >
-            makeItCombo
+            <Link className="txt" to={'/topping'}>
+              Make It A Combo
+            </Link>
           </button>
 
           <button
             className="button-two"
-            role="button"
             type="primary"
             onClick={handleAddToCart}
           >
@@ -142,7 +143,6 @@ const Topping = (props) => {
               Add To Cart
             </Link>
           </button>
-      </div>
       </div>
       {/* {comboPage ? (
         <div id="makeItCombo"> */}
