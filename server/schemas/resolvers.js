@@ -69,41 +69,98 @@ const resolvers = {
     checkout: async (parent, { combo }, context) => {
       const url = new URL(context.headers.referer).origin;
       console.log(combo);
-      const NewCombo = new Combo(combo[0]);
-      console.log(await NewCombo.populate('burgers'));
-      // const order = new Order({ products: args.products });
+      // console.log(await NewCombo.populate('burgers'));
+      // console.log(await NewCombo.populate('toppings'));
+
       const line_items = [];
 
-      // const { products } = await order.populate('products');
-      const { burgers } = await NewCombo.populate('burgers');
-      // for (let i = 0; i < products.length; i++) {
-      //   const product = await stripe.products.create({
-      //     name: products[i].name,
-      //     description: products[i].description,
-      //     images: [`${url}/images/${products[i].image}`],
-      //   });
+      for (let x = 0; x < combo.length; x++) {
+        const NewCombo = new Combo(combo[x]);
+        const { burgers } = await NewCombo.populate('burgers');
+        const { toppings } = await NewCombo.populate('toppings');
+        const { fries } = await NewCombo.populate('fries');
+        const { drinks } = await NewCombo.populate('drinks');
 
-      //   const price = await stripe.prices.create({
-      //     product: product.id,
-      //     unit_amount: products[i].price * 100,
-      //     currency: 'usd',
-      //   });
+        for (let i = 0; i < burgers.length; i++) {
+          const burger = await stripe.products.create({
+            name: burgers[i].name,
+            description: burgers[i].description,
+            images: [`${url}/images/${burgers[i].image}`],
+          });
 
-      //   line_items.push({
-      //     price: price.id,
-      //     quantity: 1,
-      //   });
-      // }
+          const price = await stripe.prices.create({
+            product: burger.id,
+            unit_amount: burgers[i].price * 100,
+            currency: 'usd',
+          });
 
-      // const session = await stripe.checkout.sessions.create({
-      //   payment_method_types: ['card'],
-      //   line_items,
-      //   mode: 'payment',
-      //   success_url: `${url}/success?session_id={CHECKOUT_SESSION_ID}`,
-      //   cancel_url: `${url}/`,
-      // });
+          line_items.push({
+            price: price.id,
+            quantity: 1,
+          });
 
-      // return { session: session.id };
+          for (let j = 0; j < toppings.length; j++) {
+            const topping = await stripe.products.create({
+              name: toppings[j].name,
+            });
+
+            const price = await stripe.prices.create({
+              product: topping.id,
+              unit_amount: toppings[j].price * 100,
+              currency: 'usd',
+            });
+
+            line_items.push({
+              price: price.id,
+              quantity: 1,
+            });
+          }
+
+          for (let j = 0; j < fries.length; j++) {
+            const fry = await stripe.products.create({
+              name: fries[j].name,
+            });
+
+            const price = await stripe.prices.create({
+              product: fry.id,
+              unit_amount: fries[j].price * 100,
+              currency: 'usd',
+            });
+
+            line_items.push({
+              price: price.id,
+              quantity: 1,
+            });
+          }
+
+          for (let j = 0; j < drinks.length; j++) {
+            const drink = await stripe.products.create({
+              name: drinks[j].name,
+            });
+
+            const price = await stripe.prices.create({
+              product: drink.id,
+              unit_amount: drinks[j].price * 100,
+              currency: 'usd',
+            });
+
+            line_items.push({
+              price: price.id,
+              quantity: 1,
+            });
+          }
+        }
+      }
+
+      const session = await stripe.checkout.sessions.create({
+        payment_method_types: ['card'],
+        line_items,
+        mode: 'payment',
+        success_url: `${url}/success?session_id={CHECKOUT_SESSION_ID}`,
+        cancel_url: `${url}/`,
+      });
+
+      return { session: session.id };
     },
   },
   Mutation: {

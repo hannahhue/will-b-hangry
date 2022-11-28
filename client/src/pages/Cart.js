@@ -28,21 +28,68 @@ export default function Cart({ currentPage, handlePageChange }) {
 
   // grab data
   function submitCheckout() {
-    const newCombo = [
-      {
-        burgers: [state.cart.combo[0].burgers[0]._id],
-        toppings: [
-          state.cart.combo[0].toppings[0]._id,
-          state.cart.combo[0].toppings[1]._id,
-        ],
-        // fries: [state.cart.combo[0].fries[0]._id],
-        // drinks: [state.cart.combo[0].drinks[0]._id],
-      },
-    ];
+    // const newCombo = [
+    //   {
+    //     burgers: [state.cart.combo[0].burgers[0]._id],
+    //     toppings: [
+    //       state.cart.combo[0].toppings[0]._id,
+    //       state.cart.combo[0].toppings[1]._id,
+    //     ],
+    //     fries: [state.cart.combo[0].fries[0]._id],
+    //     drinks: [state.cart.combo[0].drinks[0]._id],
+    //   },
+    // ];
 
-    console.log(newCombo);
+    const prepCombo = [];
+
+    cart.combo.forEach((meal) => {
+      let burgersId = [];
+      console.log(meal);
+      if (meal.burgers) {
+        meal.burgers.forEach((item) => {
+          // for (let i = 0; i < item.length; i++) {
+          burgersId.push(item._id);
+          // }
+        });
+      }
+
+      let toppingsId = [];
+      if (meal.toppings) {
+        meal.toppings.forEach((item) => {
+          toppingsId.push(item._id);
+        });
+      }
+
+      let friesId = [];
+      if (meal.fries) {
+        meal.fries.forEach((item) => {
+          friesId.push(item._id);
+        });
+      }
+
+      let drinksId = [];
+      if (meal.drinks) {
+        meal.drinks.forEach((item) => {
+          drinksId.push(item._id);
+        });
+      }
+
+      console.log(burgersId);
+      console.log(toppingsId);
+
+      const Combo1 = {
+        burgers: burgersId,
+        toppings: toppingsId,
+        fries: friesId,
+        drinks: drinksId,
+      };
+
+      prepCombo.push(Combo1);
+    });
+
+    console.log(prepCombo);
     getCheckout({
-      variables: { combo: newCombo },
+      variables: { combo: prepCombo },
     });
   }
 
@@ -53,19 +100,23 @@ export default function Cart({ currentPage, handlePageChange }) {
     for (let i = 0; i < state.cart.combo.length; i++) {
       if (state.cart.combo[i].burgers && state.cart.combo[i].burgers.length) {
         sum += state.cart.combo[i].burgers[0].price;
+        console.log(sum);
       }
       if (state.cart.combo[i].toppings && state.cart.combo[i].toppings.length) {
         for (let j = 0; j < state.cart.combo[i].toppings.length; j++) {
           sum += state.cart.combo[i].toppings[j].price;
+          console.log(sum);
         }
       }
       if (state.cart.combo[i].fries && state.cart.combo[i].fries.length) {
         for (let j = 0; j < state.cart.combo[i].fries.length; j++) {
           sum += state.cart.combo[i].fries[j].price;
+          console.log(sum);
         }
       }
       if (state.cart.combo[i].drinks && state.cart.combo[i].drinks.length) {
         sum += state.cart.combo[i].drinks[0].price;
+        console.log(sum);
       }
     }
     console.log(sum);
