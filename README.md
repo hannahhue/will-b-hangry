@@ -28,7 +28,7 @@ From the home page hover over items to add or customize
 ![alt text](client/src/images/home-pg.PNG)
 
 Make it a combo!
-![alt text](client/src/images/)
+![alt text](client/src/images/combo-pg.PNG)
 
 Last minuite changes to cart or checkout!
 ![alt text](client/src/images/cart-pg.PNG)

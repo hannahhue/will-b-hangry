@@ -1,3 +1,4 @@
+//import react apollo and boot
 import React, { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import {
@@ -11,8 +12,9 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 // import './product.css';
 import { Provider } from 'react-redux';
-import store from './utils/globalState';
 
+//import pages and global state
+import store from './utils/globalState';
 import Home from './pages/Home';
 import Combo from './pages/Combo';
 import Login from './pages/Login';
@@ -22,10 +24,12 @@ import Topping from './components/Topping';
 import Test from './pages/Test2';
 import Navbar from './components/Navbar';
 
+//create graphql uri
 const httpLink = createHttpLink({
   uri: '/graphql',
 });
 
+//create context for auth
 const authLink = setContext((_, { headers }) => {
   const token = localStorage.getItem('id_token');
   return {
@@ -36,11 +40,13 @@ const authLink = setContext((_, { headers }) => {
   };
 });
 
+//connect apollo tp auth and cacheee
 const client = new ApolloClient({
   link: authLink.concat(httpLink),
   cache: new InMemoryCache(),
 });
 
+//render page changes and navbar
 function App() {
   const handlePageChange = (page) => setCurrentPage(page);
   const [currentPage, setCurrentPage] = useState('Home');

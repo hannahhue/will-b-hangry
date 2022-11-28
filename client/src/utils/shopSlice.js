@@ -1,5 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 
+//shopping cart structure
 export const shopSlice = createSlice({
   name: 'shop',
   initialState: {
@@ -46,6 +47,7 @@ export const shopSlice = createSlice({
   //      ]
   //     ],
 
+  //reducers used to update ect, called via functions
   reducers: {
     updateBurger: (state, action) => {
       state.burgers = action.payload.burgers;
