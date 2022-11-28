@@ -2,7 +2,7 @@
 
 ## Description
 
-Want to order from a restaurant, select the any item and modify as you wish. Check and have the option to add more items. Prepay for my order, and have a pick up or delivery option. Application is responsive and made using the MERN stack, graphql, Bootstrap, Redux, Stripe, and so much more! Our motivation was to create something that can help that late night cravings and can be more personalized and homey compared to other restaurants. It solves the issue of never knowing what to get with our smalling menue selection, allowing for an easier decision. Throughout this project, we learned about implementing liabraries, communication with a team, and provided better understanding of the MERN stack.
+Want to order from a restaurant, select the any item and modify as you wish. Check and have the option to add more items and prepay for your order. Application is responsive and made using the MERN stack, graphql, Bootstrap, Redux, Stripe, and so much more! Our motivation was to create something that can help that late night cravings and can be more personalized and homey compared to other restaurants. It solves the issue of never knowing what to get with our smalling menue selection, allowing for an easier decision. Throughout this project, we learned about implementing liabraries, communication with a team, and provided better understanding of the MERN stack.
 
 ## Table of Contents (Optional)
 
