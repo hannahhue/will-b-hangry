@@ -1,3 +1,4 @@
+//define and export
 const User = require('./User');
 const Order = require('./Order');
 const Burger = require('./Burger');

@@ -1,5 +1,7 @@
+//define
 const { Schema, model } = require('mongoose');
 
+//fry mod
 const frySchema = new Schema({
   name: {
     type: String,

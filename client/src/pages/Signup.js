@@ -6,7 +6,7 @@ import { ADD_USER } from '../utils/mutations';
 
 function Signup(props) {
   const [formState, setFormState] = useState({ email: '', password: '' });
-  const [addUser] = useMutation(ADD_USER);
+  const [addUser, { error }] = useMutation(ADD_USER);
 
   const handleFormSubmit = async (event) => {
     event.preventDefault();
@@ -63,6 +63,13 @@ function Signup(props) {
               id="pwd"
               onChange={handleChange}
             />
+            {error ? (
+              <div>
+                <p className="error-text">
+                  The provided credentials are incorrect
+                </p>
+              </div>
+            ) : null}
             <button type="submit">sign up</button>
             <p className="message">
               Have an account? <Link to="/login">Login</Link>

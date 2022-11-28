@@ -121,18 +121,20 @@ const Topping = (props) => {
             <div className="topping-item">
               <div className="product-row">{section1}</div>
             </div>
+          </div>
+        </div>
         <div className="container-button">
-        <button
+          <button
             className="button-one"
             type="primary"
-            // onClick={handleAddToCart}
+            onClick={() => toggleComboPage((pre) => !pre)}
           >
-            <Link className="txt" to={'/combo'}>
-              Make It A Combo
-            </Link>
+            makeItCombo
           </button>
+
           <button
             className="button-two"
+            role="button"
             type="primary"
             onClick={handleAddToCart}
           >
@@ -142,13 +144,13 @@ const Topping = (props) => {
           </button>
       </div>
       </div>
-      {comboPage ? (
-        <div id="makeItCombo">
-          <Combo burger={burger} selectedToppings={selectedToppings} />
-        </div>
+      {/* {comboPage ? (
+        <div id="makeItCombo"> */}
+      <Combo burger={burger} selectedToppings={selectedToppings} />
+      {/* </div>
       ) : (
         <></>
-      )}
+      )} */}
     </>
   );
 };

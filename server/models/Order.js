@@ -1,5 +1,7 @@
+//define
 const { Schema, model } = require('mongoose');
 
+//order mod, include selected items into combo array
 const orderSchema = new Schema({
   purchaseDate: {
     type: Date,

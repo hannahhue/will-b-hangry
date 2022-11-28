@@ -5,7 +5,6 @@
     margin: auto;
     margin-right: 400px;
  }
-  
  .topping-h1 {
     width: 100%;
     font-size: 50px;
@@ -15,7 +14,6 @@
     color: whitesmoke;
     border-bottom: 1px solid whitesmoke;
  }
-  
  .sub {
     font-size: 35px;
     color: white;
@@ -24,12 +22,10 @@
     text-align: center;
     justify-content: center;
  }
-  
  .txt {
     color: white;
     text-decoration: none;
  }
-  
  .container-button{
     display: flex;
     justify-content: center;
@@ -45,10 +41,9 @@
     height: 100%;
     float: right;
  }
-  
  .button-one {
     align-items: center;
-    background-color: #ffce00;
+    background-color: #FFCE00;
     border: 0;
     border-radius: 100px;
     box-sizing: border-box;
@@ -73,14 +68,12 @@
     position: relative;
     left: -20px
  }
-  
  .button-one:hover {
     text-decoration: none;
  }
-  
  .button-two {
   align-items: center;
-  background-color: #ffce00;
+  background-color: #FFCE00;
   border: 0;
   border-radius: 100px;
   box-sizing: border-box;
@@ -106,8 +99,6 @@
   position: relative;
   right: -20px
  }
-  
  .button-two:hover {
     text-decoration: none;
  }
- 
