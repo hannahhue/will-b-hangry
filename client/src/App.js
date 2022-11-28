@@ -23,6 +23,7 @@ import Signup from './pages/Signup';
 import Topping from './components/Topping';
 import Test from './pages/Test2';
 import Navbar from './components/Navbar';
+import Success from './pages/Sucess';
 
 //create graphql uri
 const httpLink = createHttpLink({
@@ -64,6 +65,7 @@ function App() {
               <Route path="/topping/:burgerId" element={<Topping />} />
               <Route path="/combo" element={<Combo />} />
               <Route path="/cart" element={<Cart />} />
+              <Route path="/success" element={<Success />} />
             </Routes>
           </Provider>
         </div>
