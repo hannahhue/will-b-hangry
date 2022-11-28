@@ -16,7 +16,7 @@ export default function Drink({
   const handleAddToCart = (drink) => {
     const newItem = {
       burgers: [burger],
-      toppings: [selectedToppings],
+      toppings: selectedToppings,
       drinks: [drink],
       fries: [...selectedFry],
     };
