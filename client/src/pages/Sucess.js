@@ -4,42 +4,31 @@ import { ADD_ORDER } from '../utils/mutations';
 import { idbPromise } from '../utils/helpers';
 
 function Success() {
-  const [addOrder] = useMutation(ADD_ORDER);
+  // const [addOrder] = useMutation(ADD_ORDER);
 
-  useEffect(() => {
-    async function saveOrder() {
-      const cart = await idbPromise('cart', 'get');
-      const products = cart.map((item) => item._id);
+  // useEffect(() => {
+  //   async function saveOrder() {
 
-      if (products.length) {
-        const { data } = await addOrder({ variables: { products } });
-        const productData = data.addOrder.products;
+  setTimeout(() => {
+    window.location.assign('/');
+  }, 3000);
+  // }
 
-        productData.forEach((item) => {
-          idbPromise('cart', 'delete', item);
-        });
-      }
-
-      setTimeout(() => {
-        window.location.assign('/');
-      }, 3000);
-    }
-
-    saveOrder();
-  }, [addOrder]);
+  //   saveOrder();
+  // }, [addOrder]);
 
   return (
-    <div class="wrapper-success">
-      <div class="success-card">
-        <div class="icon">
-          <i class="fas fa-check-circle"></i>
+    <div className="wrapper-success">
+      <div className="success-card">
+        <div className="icon">
+          <i className="fas fa-check-circle"></i>
         </div>
-        <div class="subject">
+        <div className="subject">
           <h3>Success</h3>
           <p>Your order has been placed and will be ready for pickup soon!</p>
         </div>
-        <div class="icon-times">
-          <i class="fas fa-times"></i>
+        <div className="icon-times">
+          <i className="fas fa-times"></i>
         </div>
       </div>
     </div>
