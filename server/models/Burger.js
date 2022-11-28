@@ -1,5 +1,7 @@
+//define
 const { Schema, model } = require('mongoose');
 
+//burg mod
 const burgerSchema = new Schema({
   name: {
     type: String,

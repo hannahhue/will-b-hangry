@@ -1,8 +1,10 @@
+//define
 const jwt = require('jsonwebtoken');
 
 const secret = 'mysecretsshhhhh';
 const expiration = '2h';
 
+//ad midleware login auth
 module.exports = {
   authMiddleware: function ({ req }) {
     // allows token to be sent via req.body, req.query, or headers
