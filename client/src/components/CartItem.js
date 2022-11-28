@@ -8,10 +8,10 @@ export default function CartItem({ item }) {
   const state = useSelector((state) => state.shop);
   const dispatch = useDispatch();
 
-  const handleRemoveFromCart = (burger) => {
+  const handleRemoveFromCart = (item) => {
     dispatch(
       removeFromCart({
-        _id: burger._id,
+        _id: item._id,
       })
     );
   };
@@ -31,12 +31,25 @@ export default function CartItem({ item }) {
       ) : (
         <></>
       )}
+
+      {item.toppings ? (
+        item.toppings.map((topping) => (
+          <tr key={topping._id}>
+            <td>
+              {/* <a onClick={() => handleRemoveFromCart(topping)}>🗑️</a> */}
+            </td>
+            <td>{topping.name}</td>
+            <td className="right">{topping.price}</td>
+          </tr>
+        ))
+      ) : (
+        <></>
+      )}
+
       {item.fries ? (
         item.fries.map((fry) => {
           <tr key={fry._id}>
-            <td>
-              <a onClick={() => handleRemoveFromCart(fry)}>🗑️</a>
-            </td>
+            <td>{/* <a onClick={() => handleRemoveFromCart(fry)}>🗑️</a> */}</td>
             <td>{fry.name}</td>
             <td className="right">{fry.price}</td>
           </tr>;
@@ -49,7 +62,7 @@ export default function CartItem({ item }) {
         item.drinks.map((drink) => {
           <tr key={drink._id}>
             <td>
-              <a onClick={() => handleRemoveFromCart(drink)}>🗑️</a>
+              {/* <a onClick={() => handleRemoveFromCart(drink)}>🗑️</a> */}
             </td>
             <td>{drink.name}</td>
             <td className="right">{drink.price}</td>

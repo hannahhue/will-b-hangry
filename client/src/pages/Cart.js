@@ -94,6 +94,7 @@ export default function Cart({ currentPage, handlePageChange }) {
           fries: [name:xxx...],
           drinks: [name:xxx...],
         },
+
       ],
     }
   */
@@ -102,11 +103,27 @@ export default function Cart({ currentPage, handlePageChange }) {
     let sum = 0;
 
     for (let i = 0; i < state.cart.combo.length; i++) {
-      sum += i.price;
+      if (state.cart.combo[i].burgers && state.cart.combo[i].burgers.length) {
+        sum += state.cart.combo[i].burgers[0].price;
+      }
+      if (state.cart.combo[i].toppings && state.cart.combo[i].toppings.length) {
+        for (let j = 0; j < state.cart.combo[i].toppings.length; j++) {
+          sum += state.cart.combo[i].toppings[j].price;
+        }
+      }
+      if (state.cart.combo[i].fries && state.cart.combo[i].fries.length) {
+        for (let j = 0; j < state.cart.combo[i].fries.length; j++) {
+          sum += state.cart.combo[i].fries[j].price;
+        }
+      }
+      if (state.cart.combo[i].drinks && state.cart.combo[i].drinks.length) {
+        sum += state.cart.combo[i].drinks[0].price;
+      }
+
       console.log(sum);
     }
     console.log(sum);
-    return sum;
+    return sum.toFixed(2);
   }
 
   // const getTotalPrice = (items) =>
@@ -156,14 +173,14 @@ export default function Cart({ currentPage, handlePageChange }) {
               <table>
                 <tbody>
                   {state.cart.combo.map((item) => (
-                    <CartItem key={item.burgers[0]._id} item={item} />
+                    <CartItem item={item} />
                   ))}
                 </tbody>
               </table>
               <div className="bar center">
                 <div className="barcode"></div>
                 <br />
-                {/* <p>Total: ${findSum()}</p> */}
+                <p>Total: ${findSum()}</p>
                 <br />
                 {Auth.loggedIn() ? (
                   <a className="thankyou" onClick={submitCheckout}>

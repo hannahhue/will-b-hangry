@@ -44,14 +44,22 @@ const Topping = (props) => {
     }
   }, [dispatch, burgerData, state.burgers, burgerId, loading]);
 
+  useEffect(() => {
+    if (toppingData) {
+      dispatch(updateTopping(toppingData));
+    }
+  }, [toppingData, dispatch]);
+
   function handleSelectToppings(e, choice) {
     if (e.target.checked) {
       setToppings([...selectedToppings, choice]);
+      console.log(selectedToppings);
     } else {
       const newSelect = selectedToppings.filter(
         (topping) => topping._id !== choice._id
       );
       setToppings([...newSelect]);
+      console.log(selectedToppings);
     }
   }
 
@@ -121,7 +129,7 @@ const Topping = (props) => {
             className="button-18"
             role="button"
             type="primary"
-            onPress={handleAddToCart}
+            onClick={handleAddToCart}
           >
             <Link className="txt" to={'/cart'}>
               Add To Cart

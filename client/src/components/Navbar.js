@@ -40,7 +40,7 @@ function Nav() {
                       <a
                         href="/"
                         onClick={() => Auth.logout()}
-                        className="nav-link"
+                        className="link"
                       >
                         Logout
                       </a>
@@ -50,11 +50,11 @@ function Nav() {
                       </Link>
                     )}
                   </li>
-                  <li className="nav-item">
-                    <Link to="combo" className="link">
-                      Combo
+                  {/* <li className="nav-item">
+                    <Link to="/cart" className="link">
+                      Cart
                     </Link>
-                  </li>
+                  </li> */}
                   <li className="nav-item">
                     <Link to="/cart" className="link-c">
                       🛒
