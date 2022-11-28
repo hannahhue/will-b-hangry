@@ -72,10 +72,6 @@ export default function Cart({ currentPage, handlePageChange }) {
     return sum.toFixed(2);
   }
 
-<<<<<<< HEAD
-  // render html
-=======
->>>>>>> 1182e32661c24ea448956a093549c4136b533abb
   return (
     <main>
       {/* sign text */}
