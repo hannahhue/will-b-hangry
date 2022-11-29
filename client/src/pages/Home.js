@@ -1,7 +1,7 @@
 // import
-import React, { useEffect } from "react";
-import { useQuery } from "@apollo/client";
-import Burgers from "../components/Burgers";
+import React, { useEffect } from 'react';
+import { useQuery } from '@apollo/client';
+import Burgers from '../components/Burgers';
 import restaurant from '../images/wbh.jpg';
 
 import {
@@ -9,7 +9,7 @@ import {
   QUERY_TOPPINGS,
   QUERY_DRINKS,
   QUERY_FRY,
-} from "../utils/queries";
+} from '../utils/queries';
 
 // to reducer function to modify global state
 import {
@@ -18,11 +18,12 @@ import {
   updateBurger,
   updateTopping,
   updateFry,
-} from "../utils/shopSlice";
+} from '../utils/shopSlice';
 
 // function to access global state
-import { useDispatch, useSelector } from "react-redux";
-import Test2 from "./Test2";
+import { useDispatch, useSelector } from 'react-redux';
+
+import { useParams } from 'react-router-dom';
 
 export default function Home({ currentPage, handlePageChange }) {
   //get global state
@@ -42,6 +43,15 @@ export default function Home({ currentPage, handlePageChange }) {
     }
   }, [dispatch, burgerData]);
   console.log(state);
+
+  // useEffect(() => {
+  //   if (window.location.search.includes('session_id')) {
+  //     window.alert(
+  //       'Your order has been placed and will be ready for pickup soon!'
+  //     );
+  //     window.location.assign('/');
+  //   }
+  // }, []);
 
   return (
     <main>
@@ -77,9 +87,10 @@ export default function Home({ currentPage, handlePageChange }) {
             From a small hole in a wall restaurant we been pumping out big
             flavours that our customers love and come by the droves for. In
             order to provide the best service for our customers we made this web
-            application, where you are able to place pick up orders in an effort to
-            avoid the long wait times, this is because every burger is made fresh when
-            ordered! We kill, ground and flavour the cow as soon you click submit.
+            application, where you are able to place pick up orders in an effort
+            to avoid the long wait times, this is because every burger is made
+            fresh when ordered! We kill, ground and flavour the cow as soon you
+            click submit.
           </p>
           <img src={restaurant} alt="inside restaurant"></img>
         </div>

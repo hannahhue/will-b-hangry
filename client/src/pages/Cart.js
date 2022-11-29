@@ -8,7 +8,7 @@ import { QUERY_CHECKOUT } from '../utils/queries';
 import { useLazyQuery } from '@apollo/client';
 import { loadStripe } from '@stripe/stripe-js';
 
-// api key
+// testing api key
 const stripePromise = loadStripe('pk_test_TYooMQauvdEDq54NiTphI7jx');
 
 // cart grab from global state
@@ -21,6 +21,7 @@ export default function Cart({ currentPage, handlePageChange }) {
   useEffect(() => {
     if (data) {
       stripePromise.then((res) => {
+        console.log(res);
         res.redirectToCheckout({ sessionId: data.checkout.session });
       });
     }
